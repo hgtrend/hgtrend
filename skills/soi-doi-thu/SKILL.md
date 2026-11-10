@@ -13,7 +13,8 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 | Người dùng hỏi | Làm gì |
 |---|---|
 | Nêu tên đối thủ, tên kênh (@…) hoặc link kênh / trang | Báo cáo `hgsoidt` |
-| Quảng cáo của một NGÀNH, không có đối thủ nào | Công cụ lẻ — mục «Quảng cáo theo ngành» |
+| Quảng cáo của một NGÀNH theo từ khoá, không có đối thủ nào | Công cụ lẻ — mục «Quảng cáo theo ngành» (chỉ có Facebook / Instagram và TikTok; quảng cáo Google theo từ khoá ngành thì HG Trend chưa có) |
+| Chỉ hỏi quảng cáo Google của một tên miền | Báo cáo `hgsoidt` với `ten_mien` cho biết lần này **có thấy mẫu không, bao nhiêu mẫu**. Muốn xem **từng mẫu** thì «Quảng cáo Google của đối thủ» (`hgcloe4t`, cuối mục «Quảng cáo theo ngành») — luôn báo giá và chờ đồng ý |
 | Doanh thu, số đơn, tiền quảng cáo đã tiêu, mẫu nào «ra đơn», lượt xem của mẫu quảng cáo | HG Trend **chưa có**. Nói vậy; báo cáo chỉ cho biết họ đăng gì, mẫu nào đang chạy, từ bao giờ |
 | Shop đối thủ trên Shopee, Lazada, Tiki, Sendo, Zalo | Chưa có; hỏi họ có muốn soi kênh mạng xã hội và quảng cáo của đối thủ đó không |
 | Khách nói gì dưới bài của đối thủ | Báo cáo «Tóm tắt bình luận: khách khen, chê gì» (`hgbinhluan`), cần link bài |
@@ -34,16 +35,19 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 | `xem_quang_cao_tiktok` | không | Xem thêm thư viện quảng cáo TikTok (chủ yếu quảng cáo hiển thị ở châu Âu) (mặc định false) |
 | `so_bai` | không | Số bài nổi bật / mẫu quảng cáo liệt kê (mặc định 5) (từ 3 đến 10) |
 
-- Đã có **link hoặc tên kênh (@…)**: điền đúng ô của nền tảng đó và **đặt `tu_tim_kenh` = false** (mặc định bật: HG dò thêm kênh khác, lượt chạy đắt hơn).
-- **Chỉ có tên thương hiệu**: điền `thuong_hieu`, để `tu_tim_kenh` bật (kể cả khi họ chỉ hỏi một nền tảng). Tên càng đầy đủ càng ít nhầm («Cocoon Vietnam», không phải «Cocoon»).
+`tu_tim_kenh` mặc định bật: HG dò thêm các kênh chưa được đưa theo tên thương hiệu, lượt chạy đắt hơn. Chọn theo điều họ hỏi:
+
+- **Chỉ hỏi đúng kênh đã đưa link / tên (@…)**: điền ô của nền tảng đó, đặt `tu_tim_kenh` = false; **đừng điền thêm `thuong_hieu`, `ten_mien`** — điền là HG tra thêm quảng cáo, tốn thêm.
+- **Chỉ hỏi quảng cáo**: quảng cáo Facebook thì chỉ điền `thuong_hieu`; quảng cáo Google thì chỉ điền `ten_mien`; hỏi cả hai mới điền cả hai. Đặt `tu_tim_kenh` = false.
+- **Muốn biết đối thủ đang làm gì nói chung**: điền `thuong_hieu` (kèm kênh, tên miền nếu họ có), để `tu_tim_kenh` bật. Tên càng đầy đủ càng ít nhầm («Cocoon Vietnam», không phải «Cocoon»).
 - Quảng cáo Facebook cần `thuong_hieu`; quảng cáo Google cần `ten_mien`. Thiếu ô nào thì phần đó không được tra — nói «chưa tra phần đó», đừng nói «họ không chạy quảng cáo».
 - `xem_quang_cao_tiktok` chủ yếu ra quảng cáo ở châu Âu; chỉ bật khi người dùng nói rõ cần.
 
-Giá: **~100–820 đ mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Báo theo mức cao. **Rẻ thì báo rồi chạy luôn:** cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: báo (chạy gì, bao nhiêu tiền) rồi gọi `chay_cong_cu` ngay trong cùng câu trả lời. Trên 2.000 đ: nêu số lượt, tổng tiền và **chờ đồng ý**.
+Giá: **~100–820 đ mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
 
-Câu báo trước khi chạy gồm ba ý: chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **giá**.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Thứ họ hỏi mà dữ liệu không trả lời được thì nói ngay trong câu báo.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
 ## Chạy
 
@@ -62,8 +66,8 @@ chay_cong_cu(ma="hgsoidt", tham_so={"tiktok": "@tenkenh", "tu_tim_kenh": false})
 |---|---|---|
 | `luc` | Giờ lấy dữ liệu | Luôn ghi lại |
 | `kenh_hg_tu_tim` | Kênh HG **tự tìm** theo tên, kèm tìm từ đâu (`tim_tu`) | **Việc đầu tiên: nêu tên + link từng kênh đã soi và nhờ người dùng xác nhận đúng đối thủ.** Trang Facebook tự chọn mà không đọc được, hoặc ít người thích (`nguoi_thich_trang`) so với tầm thương hiệu, thì nhiều khả năng không phải trang chính: kể các tên trong `trang_cua_thuong_hieu`, nhờ họ đưa link trang chính thức |
-| `kenh` | Mỗi nền tảng một khối | `nguoi_theo_doi`, `tong_luot_thich`, `so_video` là của **cả kênh**. Nhịp đăng (`bai_moi_tuan`, `bai_moi_nhat_ngay`, `bai_trong_7_ngay_qua`), mức xem / thích ở giữa, `tuong_tac_o_giua`, `gio_hay_dang`, `hashtag_hay_dung`, `bai_noi_bat`, `bai_gan_gio_hang` tính trên **`so_bai_xem` bài mới nhất** (khoảng 10 bài; Facebook có khi vài bài). Ngày đăng YouTube là ước. Nền tảng **không có trong `kenh`** hoặc có `khong_doc_duoc` = lần này không tìm thấy / không đọc được, không phải đối thủ không có kênh |
-| `quang_cao` → Facebook | Mẫu **đang chạy ở Việt Nam** tìm theo tên: `tong_mau_khop_tu_khoa_o_VN`, `so_mau_da_xem`, `mau_cua_thuong_hieu_dang_chay`, `trang_cua_thuong_hieu`, `mau_chay_lau_nhat_tu`, `dang_quang_cao`, `nut_bam`, `hien_o`, `mau` (kèm `link_thu_vien`) | Chỉ xem **`so_mau_da_xem` mẫu đầu** trong tổng số — nêu cả hai. `trang_cua_thuong_hieu` có nhiều trang (cửa hàng, đại lý, trùng tên): kể đủ tên, và nói mọi con số ở khối này là **gộp của các trang ấy**, không tách được. `trang_khac_cung_chay_quang_cao_nhac_ten_nay` là trang khác nhắc tên thương hiệu. Mẫu chạy lâu chỉ cho biết nó còn được giữ chạy — không có tiền đã tiêu, lượt xem, đơn hàng |
+| `kenh` | Mỗi nền tảng một khối | `nguoi_theo_doi`, `tong_luot_thich`, `so_video` là của **cả kênh**. Nhịp đăng (`bai_moi_tuan`, `bai_moi_nhat_ngay`, `bai_trong_7_ngay_qua`), mức xem / thích / tương tác của bài đứng giữa (`luot_xem_o_giua`, `luot_thich_o_giua`, `tuong_tac_o_giua` — tức một bài bình thường của kênh), `gio_hay_dang`, `hashtag_hay_dung`, `bai_noi_bat`, `bai_gan_gio_hang` tính trên **`so_bai_xem` bài mới nhất** (khoảng 10 bài; Facebook có khi vài bài). Ngày đăng YouTube là ước. Nền tảng **không có trong `kenh`** hoặc có `khong_doc_duoc` = lần này không tìm thấy / không đọc được, không phải đối thủ không có kênh |
+| `quang_cao` → Facebook | Mẫu **đang chạy ở Việt Nam** tìm theo tên: `tong_mau_khop_tu_khoa_o_VN`, `so_mau_da_xem`, `mau_cua_thuong_hieu_dang_chay`, `trang_cua_thuong_hieu`, `mau_chay_lau_nhat_tu`, `dang_quang_cao`, `nut_bam`, `hien_o`, `mau` (kèm `link_thu_vien`) | Ba con số nối nhau, nêu đủ: có `tong_mau_khop_tu_khoa_o_VN` mẫu khớp tên này ở Việt Nam (gồm cả trang khác nhắc tên) → HG chỉ xem `so_mau_da_xem` mẫu đầu → trong số đã xem, `mau_cua_thuong_hieu_dang_chay` mẫu là của các trang thuộc thương hiệu (phần còn lại của trang khác). Đừng nói đối thủ «chỉ chạy» chừng ấy mẫu, cũng đừng tính cả tổng là của họ. `trang_cua_thuong_hieu` có nhiều trang (cửa hàng, đại lý, trùng tên): kể đủ tên, và nói mọi con số ở khối này là **gộp của các trang ấy**, không tách được. `trang_khac_cung_chay_quang_cao_nhac_ten_nay` là trang khác nhắc tên thương hiệu. Mẫu chạy lâu chỉ cho biết nó còn được giữ chạy — không có tiền đã tiêu, lượt xem, đơn hàng |
 | `quang_cao` → Google | Mẫu theo `ten_mien`: `so_mau_thay` | 0 = **lần này không thấy mẫu nào** cho tên miền đó; đừng kết luận «không chạy Google Ads» |
 | `hg_nhan_xet` | Câu máy ghép sẵn | **Đừng chép**; tự viết lại |
 | `phan_tam_thieu`, `ghi_chu` | Phần không lấy được; giới hạn dữ liệu | Nói lại cho người dùng |
@@ -74,26 +78,39 @@ chay_cong_cu(ma="hgsoidt", tham_so={"tiktok": "@tenkenh", "tu_tim_kenh": false})
 |---|---|---|
 | Mẫu Facebook / Instagram đang chạy theo từ khoá | «Quảng cáo đang chạy trên Facebook» (`hgycspqa`, ~100 đ) | `query` = từ khoá ngành tiếng Việt; `country` = «VN» |
 | Mẫu TikTok theo từ khoá | «Tìm quảng cáo TikTok theo từ khoá» (`hg76xztf`, ~100 đ) | `query`. Thư viện này chủ yếu có quảng cáo ở châu Âu — ngành hàng Việt Nam thường ra ít mẫu, mẫu nhỏ |
-| Quảng cáo Google của một tên miền | «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~30–100 đ hoặc ~1.300 đ/kết quả) | `domain`, `region` = «VN»; không tìm theo từ khoá ngành được. Giá có phần tính **theo số kết quả**: luôn báo giá và chờ đồng ý |
 
-Công cụ lẻ trả **dữ liệu thô** tiếng Anh. Với `hgycspqa`: mỗi mục trong `searchResults` là một mẫu — đọc `page_name`, `is_active`, `display_format`, `cta_text` và chữ quảng cáo. Kết quả thường bị cắt (trường `rut_gon` ghi giữ bao nhiêu trên tổng số): nói mới xem được chừng ấy mẫu. Tìm theo từ khoá ra rất nhiều mẫu không liên quan: **đọc chữ từng mẫu**, chỉ kể mẫu đúng ngành, nói đã bỏ bao nhiêu mẫu lạc đề. Bỏ qua các trường về tài khoản của nguồn.
+Riêng **quảng cáo Google của MỘT tên miền** (không tìm theo từ khoá ngành được): «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~30–100 đ hoặc ~1.300 đ/kết quả), tham số `domain`, `region` = «VN». Giá có phần tính **theo số kết quả**: luôn báo giá và chờ đồng ý. Người dùng muốn soi cả kênh lẫn quảng cáo của đối thủ đó thì dùng báo cáo `hgsoidt` ở trên.
+
+Công cụ lẻ trả **dữ liệu thô** tiếng Anh. Với `hgycspqa`: mỗi mục trong `searchResults` là một mẫu — đọc `page_name`, `is_active`, `display_format`, `cta_text` và chữ quảng cáo. Kết quả thường bị cắt (trường `rut_gon` ghi giữ bao nhiêu trên tổng số): nói mới xem được chừng ấy mẫu. Tìm theo từ khoá ra rất nhiều mẫu không liên quan: **đọc chữ từng mẫu**, chỉ kể mẫu đúng ngành, nói đã bỏ bao nhiêu mẫu lạc đề. Với `hg76xztf`: các mẫu nằm trong `ads`, `total` là tổng số mẫu khớp — nói đã xem bao nhiêu trên tổng. `estimated_audience` (dạng «0-1K») là khung ước lượng của thư viện, chủ yếu ở châu Âu: **không phải lượt xem, không phải số người thấy quảng cáo ở Việt Nam**. Bỏ qua các trường về tài khoản của nguồn.
 
 ## Trả lời người dùng
 
-Người dùng bỏ tiền theo câu trả lời này. Trước khi gửi, soát:
+Người dùng bỏ tiền theo câu trả lời này. **Phần sự thật** — soát trước khi gửi:
 
 - **Số và tên chép đúng.** Rút gọn tên không được làm đổi mặt hàng hay cách bán (giữ «combo», «mua 2 tặng 1»). Tên shop, tên kênh không phải tên loại hàng.
 - **Không thêm lý do, không thêm tính chất.** Không viết «vì…», «cho thấy…» như dữ kiện; không gắn «chính hãng», «loại cơ bản», «trôi nổi»… khi kết quả không ghi.
-- **Nói cỡ mẫu.** Nêu đúng số mục có trong kết quả; không nói thay cả sàn, cả thị trường. Số gộp tính cả mục không hiện tên và mục lạc loại.
+- **Nói cỡ mẫu.** Nêu đúng số mục có trong kết quả; không nói thay cả sàn, cả thị trường. Số gộp HG tính sẵn (khi có) tính cả mục không hiện tên và mục lạc loại.
 - **Bỏ mục lạc loại** khỏi phần liệt kê và phần nhận định; nói đã bỏ gì.
-- **Nhận định để riêng**, ghi rõ là của bạn, và phải chỉ ra được mục hay con số đỡ cho nó — đếm lại trước khi viết, không đếm được thì bỏ.
-- **Giữ đơn vị gốc:** không tự đổi ¥ ra đồng, không ước doanh thu từ lượt bán, không đổi điểm tương đối thành số người.
-- **Không quyết thay:** nêu điều đáng cân nhắc, không phán «nên» hay «không nên».
+- **«Tất cả», «đều», «không món nào»** chỉ viết khi đã soát từng mục trong danh sách; sót một mục là câu sai.
+- **Nhận định ghi rõ là của bạn** («theo tôi», «tôi nghiêng về»), và phải chỉ ra được mục hay con số đỡ cho nó — đếm lại trước khi viết, không đếm được thì bỏ.
+- **Giữ đơn vị gốc:** không tự đổi ¥ ra đồng, không ước doanh thu từ lượt bán, không đổi điểm 0–100 thành số người.
+- **Được khuyên, không quyết thay.** Người dùng hỏi «nên hay không», «chọn cái nào» thì nói bạn nghiêng về phía nào, vì con số nào, và điều gì có thể làm đổi ý. Lời khuyên chỉ dựa trên phần dữ liệu thấy được — chưa tính những thứ dữ liệu không có (giá nhập, phí sàn, chi phí quảng cáo, vốn của họ…): nói điều này một lần. Dữ liệu thưa, thiếu phần chính hoặc trái chiều nhau: nói thẳng «chưa đủ dữ liệu để khuyên» và cần xem thêm gì. Không viết «chắc chắn», «đảm bảo», «sẽ bán được».
 
-Thứ tự:
+**Phần cách viết** — người đọc là chủ shop đang bận, đọc trên điện thoại:
 
-1. **Đã soi những kênh nào** — tên + link; kênh HG tự tìm thì nhờ xác nhận; nền tảng nào không tìm thấy / không đọc được.
-2. **Họ đăng gì** — từng nền tảng: nhịp đăng, bài mới nhất, mức xem / tương tác ở giữa, 2–3 bài nổi bật kèm link, giờ hay đăng. **Luôn kèm:** tính trên bao nhiêu bài mới nhất.
-3. **Họ chạy quảng cáo gì** — số mẫu đang chạy (trong bao nhiêu mẫu đã xem, của những trang nào), dạng, nút bấm, mẫu chạy lâu nhất, 2–3 mẫu kèm chữ và link. Phần chưa tra / không thấy thì nói đúng vậy.
-4. **Điều đáng cân nhắc** — 2–3 ý, ghi rõ là nhận định. Nhịp đăng và số mẫu cho biết họ ĐANG LÀM gì, không cho biết cái gì hiệu quả.
-5. Kết bằng một hai dòng: lấy lúc nào (kết quả không ghi giờ thì nói vậy) · đây là dữ liệu công khai HG Trend lấy lúc chạy · phạm vi như bảng «Đọc kết quả» ghi · phần nào lần này không lấy được.
+- **Dòng đầu nói giá lượt chạy** (như mục «Trước khi chạy»), **ngay sau đó là câu mở trả lời thẳng điều họ hỏi**, kèm một hai con số chính. Họ hỏi «nên hay không» thì câu mở nói luôn bạn nghiêng về phía nào, mở bằng «Theo tôi».
+- **Mỗi con số, mỗi ý chỉ nêu một lần.** Số đã nêu ở câu mở thì bên dưới không nêu lại; phần số liệu chỉ thêm số chưa nêu. Chỉ đưa số giúp họ quyết; bảng chỉ dùng khi xếp từ 3 mục cạnh nhau. Câu trả lời cho một lượt chạy thường gọn trong 300–450 chữ — dài hơn là đang lặp.
+- **Lời thường, không dùng chữ của máy.** Không viết tên trường. Số bán nói kèm kỳ đúng như bảng trên ghi («đã bán 12.000 cái từ trước tới nay», «trong tháng», hoặc «không ghi của kỳ nào») thay cho «cộng dồn»; «giá niêm yết (giá gạch ngang)» thay cho «giá gốc» (dễ nhầm với giá nhập); «người ta hay tìm kèm: …» thay cho «cụm gõ kèm»; «tôi mới xem được 4 trong 30 mẫu» thay cho «kết quả bị cắt». Điểm Google nói bằng so sánh trước, điểm để trong ngoặc: «4 tuần gần đây chỉ bằng khoảng một phần tư mức cả năm (6 so với 22, thang 100)». Chữ và nhãn tiếng nước ngoài thì dịch.
+- **Lưu ý về giới hạn dữ liệu gom vào MỘT dòng cuối** («Lưu ý khi đọc số: …»): mỗi ý một lần, chỉ ý dính tới con số bạn đã dùng. Riêng lưu ý làm đổi nghĩa con số ngay tại chỗ thì viết liền con số bằng vài chữ («109.000 đ, niêm yết 199.000 đ»; «12 ¥ một cái, chưa gồm phí về Việt Nam») và không nhắc lại ở cuối.
+- **Kết bằng MỘT việc nên làm tiếp**, một câu; cần chạy thêm thì nêu giá và chờ họ đồng ý.
+- **Con số «đứng giữa»** (HG xếp từ thấp tới cao rồi lấy mục giữa — bảng trên ghi ô nào): viết «một nửa số món bán từ … trở xuống», «một bài bình thường được khoảng … lượt xem». Không viết «ở giữa», «trung vị»; **không gọi là «trung bình»** — đây chưa phải trung bình cộng.
+
+Bố cục:
+
+1. **Câu mở** — đối thủ (hoặc ngành) đang làm gì nổi bật nhất: dồn vào kênh nào, đăng đều tới đâu; và quảng cáo: **đang chạy** (viết liền con số: «20 mẫu trong 25 mẫu đã xem, gộp của 7 trang mang tên này») · **lần này không thấy mẫu nào** · **phần này chưa tra**. Kênh do HG tự tìm mà chưa được xác nhận thì câu mở nói «nếu đúng đây là kênh của họ».
+2. **Đã soi những kênh nào** — tên + link; kênh HG tự tìm thì nhờ xác nhận đúng đối thủ; nền tảng nào không tìm thấy / không đọc được.
+3. **Họ đăng gì** — từng nền tảng: nhịp đăng, bài mới nhất, một bài bình thường được bao nhiêu lượt xem / tương tác, 2–3 bài nổi bật kèm link, giờ hay đăng.
+4. **Họ chạy quảng cáo gì** — số mẫu (ba mốc như bảng trên, của những trang nào), dạng, nút bấm, mẫu chạy lâu nhất, 2–3 mẫu kèm chữ và link. Phần chưa tra / không thấy thì nói đúng vậy.
+5. **Việc nên làm trước** — theo bạn, MỘT việc người dùng nên làm sau khi đọc (kèm con số đỡ cho nó); thêm tối đa hai điều đáng cân nhắc. Dữ liệu chỉ cho biết họ ĐANG LÀM gì, không biết cái gì ra đơn hay có lãi: việc bạn khuyên chỉ nên là **tìm hiểu thêm hoặc thử nhỏ** (xem kỹ mẫu chạy lâu nhất, đọc bình luận bài nổi bật, thử một dạng bài họ đăng đều) — đừng khuyên «làm theo», «chạy mẫu này», «dồn vào kênh này» như thể nó đã hiệu quả.
+6. **Dòng lưu ý cuối** gồm: lấy lúc nào (kết quả không ghi giờ thì nói vậy) · đây là dữ liệu công khai HG Trend lấy lúc chạy · phạm vi của những con số đã dùng (theo cột «Lưu ý» ở bảng trên) · phần nào lần này không lấy được. Thường là: các số về bài đăng tính trên bao nhiêu bài mới nhất · quảng cáo mới xem bao nhiêu mẫu đầu · nhịp đăng và số mẫu cho biết họ ĐANG LÀM gì, không cho biết cái gì ra đơn — không có doanh thu, tiền quảng cáo, lượt xem của mẫu quảng cáo.
+7. **Việc nên làm tiếp** — một câu.

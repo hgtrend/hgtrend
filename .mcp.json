@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "hgtrend": {
+      "type": "http",
+      "url": "https://hgtrend.com/mcp"
+    }
+  }
+}

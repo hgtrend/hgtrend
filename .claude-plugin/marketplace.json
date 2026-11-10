@@ -1,0 +1,16 @@
+{
+  "name": "hgtrend",
+  "owner": {
+    "name": "HG Studio"
+  },
+  "metadata": {
+    "description": "Kho công cụ lấy dữ liệu thị trường cho người bán hàng và làm marketing ở Việt Nam, dùng qua trợ lý AI: món bán chạy, đối thủ, bình luận, giá sỉ 1688."
+  },
+  "plugins": [
+    {
+      "name": "hgtrend",
+      "source": "./",
+      "description": "Kho công cụ lấy dữ liệu thị trường cho người bán hàng và làm marketing ở Việt Nam, dùng qua trợ lý AI: món bán chạy, đối thủ, bình luận, giá sỉ 1688."
+    }
+  ]
+}

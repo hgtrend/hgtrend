@@ -3,7 +3,7 @@
 Bạn nhắn việc cho trợ lý AI như bình thường. Trợ lý dùng HG Trend để lấy dữ liệu công khai đang có trên mạng rồi trả lời bằng tiếng Việt: món bạn định bán
 có ai tìm, ai đang bán, giá bao nhiêu; đối thủ đang đăng gì, chạy quảng cáo gì; khách khen chê gì; giá sỉ bên Trung Quốc.
 
-Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 7 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
+Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 10 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
 tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá, và không nói quá con số lấy được.
 
 ## Hỏi được gì
@@ -14,6 +14,9 @@ tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá
 | «Đồ gia dụng nhỏ đang có món nào bán chạy trên TikTok Shop?» | Tìm hàng hot | khoảng 27–143 token |
 | «TikTok đang có trend gì?» hoặc «Tuần này ngành làm đẹp có gì mới?» | Bắt trend | khoảng 22–29 token mỗi câu |
 | «Thương hiệu này đang đăng gì trên TikTok, Facebook, và đang chạy quảng cáo gì trên Facebook, Google? [tên hoặc link kênh]» | Soi đối thủ | khoảng 10–82 token |
+| «Spy ads [tên thương hiệu]: họ đang chạy mẫu nào, mẫu nào chạy lâu nhất?» | Spy quảng cáo đối thủ | khoảng 20–30 token |
+| «Tìm KOC review [sản phẩm]» hoặc «Kênh @… có đáng book không?» | Tìm KOL, KOC | khoảng 10 token để tìm, mỗi kênh soát khoảng 20 token |
+| «Chạy Google Ads cho [sản phẩm] nên chọn từ khoá nào?» | Từ khoá Google Ads | khoảng 65–85 token |
 | «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 2–30 token |
 | «Tìm nguồn sỉ quạt cầm tay trên 1688» | Nguồn hàng 1688 | khoảng 77 token. Xem chi tiết một mẫu 1688: thêm khoảng 77 token. Tìm cả trên Taobao, Tmall: thêm khoảng 120 token |
 | Việc lẻ khác, ví dụ chép lời một video TikTok hoặc YouTube | Kỹ năng chung «hgtrend» tìm trong hơn 500 công cụ | giá ước tính từng công cụ ghi ở trang chủ hgtrend.com |
@@ -53,7 +56,7 @@ Gỡ gói: `claude plugin uninstall hgtrend@hgtrend`.
 
 Các trợ lý này nối thẳng tới địa chỉ `https://hgtrend.com/mcp`, không cài bộ này. Cách nối từng loại ghi ở trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
 
-**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 7 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
+**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 10 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
 không nói giá ở dòng đầu, không được dặn nói «chưa có», không được dặn nêu số món đã tính. Trợ lý tự chọn công cụ, số token tiêu có thể khác bảng ở trên.
 
 ## 6 điều phải biết trước khi mua token

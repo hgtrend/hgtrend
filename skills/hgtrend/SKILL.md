@@ -39,6 +39,9 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 - kỹ năng «khach-khen-che»: Đọc bình luận, đánh giá của người mua / người xem rồi tóm lại họ khen gì, chê gì, hay hỏi gì.
 - kỹ năng «nguon-hang-1688»: Tìm nguồn hàng sỉ bên Trung Quốc trên 1688 và Taobao bằng HG Trend.
 - kỹ năng «bat-trend»: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo).
+- kỹ năng «spy-quang-cao»: Spy quảng cáo của MỘT đối thủ.
+- kỹ năng «tim-kol-koc»: Tìm KOL, KOC trên TikTok ở Việt Nam cho một ngành hàng hay một sản phẩm, rồi soát từng kênh trước khi liên hệ.
+- kỹ năng «tu-khoa-google»: Tìm và so từ khoá để chạy quảng cáo Google (Google Ads) ở Việt Nam.
 
 **Việc khác** — dùng `tim_cong_cu` (kho có 564 công cụ, tìm không tốn token):
 

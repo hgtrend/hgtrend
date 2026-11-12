@@ -3,21 +3,22 @@
 Bạn nhắn việc cho trợ lý AI như bình thường. Trợ lý dùng HG Trend để lấy dữ liệu công khai đang có trên mạng rồi trả lời bằng tiếng Việt: món bạn định bán
 có ai tìm, ai đang bán, giá bao nhiêu; đối thủ đang đăng gì, chạy quảng cáo gì; khách khen chê gì; giá sỉ bên Trung Quốc.
 
-Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 6 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
+Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 7 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
 tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá, và không nói quá con số lấy được.
 
 ## Hỏi được gì
 
 | Bạn nhắn | Kỹ năng lo việc này | Giá ước tính cho một lần hỏi như câu mẫu |
 |---|---|---|
-| «Tôi định bán quạt cầm tay mini, xem có ai tìm và ai bán chưa» | Xem món định bán | khoảng 270–1.040 đ |
-| «Đồ gia dụng nhỏ đang có món nào bán chạy trên TikTok Shop?» | Tìm hàng hot | khoảng 270–1.430 đ |
-| «Thương hiệu này đang đăng gì trên TikTok, Facebook, và đang chạy quảng cáo gì trên Facebook, Google? [tên hoặc link kênh]» | Soi đối thủ | khoảng 100–820 đ |
-| «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 20–300 đ |
-| «Tìm nguồn sỉ quạt cầm tay trên 1688» | Nguồn hàng 1688 | khoảng 770 đ. Xem chi tiết một mẫu 1688: thêm khoảng 770 đ. Tìm cả trên Taobao, Tmall: thêm khoảng 1.200 đ |
+| «Tôi định bán quạt cầm tay mini, xem có ai tìm và ai bán chưa» | Xem món định bán | khoảng 27–104 token |
+| «Đồ gia dụng nhỏ đang có món nào bán chạy trên TikTok Shop?» | Tìm hàng hot | khoảng 27–143 token |
+| «TikTok đang có trend gì?» hoặc «Tuần này ngành làm đẹp có gì mới?» | Bắt trend | khoảng 22–29 token mỗi câu |
+| «Thương hiệu này đang đăng gì trên TikTok, Facebook, và đang chạy quảng cáo gì trên Facebook, Google? [tên hoặc link kênh]» | Soi đối thủ | khoảng 10–82 token |
+| «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 2–30 token |
+| «Tìm nguồn sỉ quạt cầm tay trên 1688» | Nguồn hàng 1688 | khoảng 77 token. Xem chi tiết một mẫu 1688: thêm khoảng 77 token. Tìm cả trên Taobao, Tmall: thêm khoảng 120 token |
 | Việc lẻ khác, ví dụ chép lời một video TikTok hoặc YouTube | Kỹ năng chung «hgtrend» tìm trong hơn 500 công cụ | giá ước tính từng công cụ ghi ở trang chủ hgtrend.com |
 
-Một lần hỏi có thể chạy hơn một công cụ, nên số tiền thật có thể cao hơn dòng ghi ở bảng; xem điều 3 và 4 ở mục «6 điều phải biết» bên dưới.
+Một lần hỏi có thể chạy hơn một công cụ, nên số token thật có thể cao hơn dòng ghi ở bảng; xem điều 3 và 4 ở mục «6 điều phải biết» bên dưới.
 
 **Chưa có:** số liệu riêng của Shopee, Lazada, Tiki, Sendo, Zalo · doanh thu hay số đơn của đối thủ · tìm hàng 1688, Taobao bằng ảnh · tính phí vận chuyển.
 Kỹ năng dặn trợ lý nói thẳng là chưa có khi bạn hỏi tới các việc này.
@@ -52,7 +53,7 @@ Gỡ gói: `claude plugin uninstall hgtrend@hgtrend`.
 
 Các trợ lý này nối thẳng tới địa chỉ `https://hgtrend.com/mcp`, không cài bộ này. Cách nối từng loại ghi ở trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
 
-**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 6 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 2.000 đ,
+**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 7 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
 không nói giá ở dòng đầu, không được dặn nói «chưa có», không được dặn nêu số món đã tính. Trợ lý tự chọn công cụ, số token tiêu có thể khác bảng ở trên.
 
 ## 6 điều phải biết trước khi mua token
@@ -61,8 +62,8 @@ không nói giá ở dòng đầu, không được dặn nói «chưa có», kh�
 2. **Token có hạn dùng:** 30 hoặc 60 ngày, ghi ở từng gói.
 3. **Giá ghi ở đây và ở trang chủ là giá ước tính**, đã gồm mọi khoản, không cộng thêm thuế hay phí. Số token trừ thật nằm trong kết quả công cụ trả về cho trợ lý
    và ở trang Tài khoản (`https://hgstudio.work/tai-khoan`). Lần chạy báo lỗi không bị trừ token.
-4. **Ngưỡng 2.000 đ là lời dặn cho trợ lý, không phải khoá của máy chủ.** Kỹ năng dặn: tổng tiền một yêu cầu không quá 2.000 đ thì chạy luôn và nói ngay dòng
-   đầu là đã chạy gì, tốn bao nhiêu; hơn 2.000 đ thì nêu tổng tiền và hỏi bạn trước. Trợ lý AI có thể làm khác lời dặn.
+4. **Ngưỡng 200 token là lời dặn cho trợ lý, không phải khoá của máy chủ.** Kỹ năng dặn: tổng token một yêu cầu không quá 200 token thì chạy luôn và nói ngay dòng
+   đầu là đã chạy gì, tốn bao nhiêu; hơn 200 token thì nêu tổng token và hỏi bạn trước. Trợ lý AI có thể làm khác lời dặn.
 5. **Số liệu có giới hạn:** dữ liệu công khai lấy từ nền tảng nguồn lúc chạy; nền tảng nguồn chặn hoặc thay đổi thì công cụ có thể tạm không chạy được. Số món,
    số shop và giá là của trang kết quả đầu, không phải của cả sàn. Lời «nên» hay «chưa nên» của trợ lý là nhận định; quyết định nhập hàng là của bạn.
 6. **Đọc trước khi trả tiền:** giá và thanh toán ở mục 3, hoàn tiền ở mục 4, điều kiện và giới hạn ở mục 13 của Điều khoản (`https://hgstudio.work/dieu-khoan`).

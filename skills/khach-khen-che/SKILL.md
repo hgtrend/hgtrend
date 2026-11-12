@@ -6,7 +6,7 @@ description: Đọc bình luận, đánh giá của người mua / người xem 
 
 Người dùng muốn nghe tiếng nói thật của người mua. Chạy báo cáo «Tóm tắt bình luận: khách khen, chê gì» (`hgbinhluan`) cho MỘT link hoặc một cửa hàng, **tự đọc các bình luận mẫu trong kết quả**, rồi tóm lại — kèm con số đã đọc bao nhiêu câu.
 
-Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_cong_cu` (tham số và giá, 0 đồng) · `chay_cong_cu` (chạy thật, tính tiền). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
+Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_cong_cu` (tham số và giá, 0 token) · `chay_cong_cu` (chạy thật, trừ token). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
 
 ## Khi nào dùng
 
@@ -14,9 +14,9 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 |---|---|
 | Link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, Google Maps | Tham số `link` (dán nguyên, đừng sửa) |
 | Tên quán / cửa hàng kèm khu vực hay địa chỉ | Tham số `dia_diem`, đủ để Google Maps ra đúng một nơi |
-| Chỉ có tên sản phẩm, không có link | Hỏi link họ muốn đọc. Họ nhờ tìm giúp: tìm trên TikTok Shop bằng «Tìm sản phẩm trên TikTok Shop» (`hgxe6eri`, ~100–770 đ), rồi **dừng lại cho họ chọn đúng món** trước khi đọc đánh giá |
+| Chỉ có tên sản phẩm, không có link | Hỏi link họ muốn đọc. Họ nhờ tìm giúp: tìm trên TikTok Shop bằng «Tìm sản phẩm trên TikTok Shop» (`hgxe6eri`, ~10–77 token), rồi **dừng lại cho họ chọn đúng món** trước khi đọc đánh giá |
 | Đánh giá trên Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa đọc được. Nói vậy; hỏi họ có link TikTok Shop, video hay Google Maps của cùng món không |
-| Nhiều link | Mỗi link một lượt; tính tổng tiền, gợi ý chọn vài link đáng đọc nhất |
+| Nhiều link | Mỗi link một lượt; tính tổng token, gợi ý chọn vài link đáng đọc nhất |
 | Link nền tảng khác (Instagram, Reddit, Amazon…) | `tim_cong_cu` với cụm «bình luận» + tên nền tảng |
 
 ## Trước khi chạy
@@ -27,13 +27,13 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 | `dia_diem` | không | Tên cửa hàng trên Google Maps (thay cho link), vd Cocoon Tăng Nhơn Phú |
 | `so_trang` | không | Số trang bình luận đọc (mỗi trang ~10–20 bình luận; Google Maps đọc tới 100 đánh giá một lần) (mặc định 2) (từ 1 đến 3) |
 
-Gửi **một trong hai**: `link` hoặc `dia_diem`. `so_trang` giữ mặc định trừ khi người dùng muốn đọc nhiều hơn (mỗi trang thêm tiền).
+Gửi **một trong hai**: `link` hoặc `dia_diem`. `so_trang` giữ mặc định trừ khi người dùng muốn đọc nhiều hơn (mỗi trang tốn thêm token).
 
-Giá: **~20–300 đ mỗi lượt** — Google Maps gần mức thấp, link video / bài / sản phẩm cao hơn. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
+Giá: **~2–30 token mỗi lượt** — Google Maps gần mức thấp, link video / bài / sản phẩm cao hơn. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
-**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ trừ token theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
 ## Chạy
 

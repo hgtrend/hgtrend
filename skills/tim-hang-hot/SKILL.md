@@ -6,7 +6,7 @@ description: Tìm món đang bán chạy trong một loại hàng ở Việt Nam
 
 Người dùng chưa biết bán gì. Chạy báo cáo «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`) cho MỘT loại hàng rồi kể đúng điều dữ liệu cho thấy — nhất là phân biệt «đã bán được nhiều từ trước tới nay» với «đang hot lúc này».
 
-Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_cong_cu` (tham số và giá, 0 đồng) · `chay_cong_cu` (chạy thật, tính tiền). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
+Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_cong_cu` (tham số và giá, 0 token) · `chay_cong_cu` (chạy thật, trừ token). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
 
 ## Khi nào dùng
 
@@ -14,7 +14,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 |---|---|
 | Nêu một loại hàng («đồ gia dụng món nào đang hot») | Dùng kỹ năng này, chạy với đúng cụm họ nêu — đừng bắt họ thu hẹp trước |
 | Hỏi chung, không nêu loại hàng («giờ nên nhập gì») | **Hỏi lại họ quan tâm loại hàng nào** (gợi ý vài nhóm). Đừng tự chọn thay rồi chạy; đừng trả lời bằng hiểu biết chung như thể là dữ liệu |
-| Đã có một món cụ thể | Báo cáo «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~270–1.040 đ) |
+| Đã có một món cụ thể | Báo cáo «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token) |
 | Bán chạy «tuần này», «tháng này» ở Việt Nam | Chạy được, nhưng nói trước: số đã bán trên TikTok Shop là cộng dồn, không có số theo tuần / tháng |
 | Hàng hot bên Trung Quốc | Thêm `tu_khoa_douyin` |
 | Top bán chạy của Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem TikTok Shop thay không |
@@ -24,11 +24,11 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 1. **Loại hàng** (`tu_khoa`): cụm tiếng Việt có dấu như người mua gõ («đồ gia dụng nhà bếp», «son kem»). Cụm rộng («mỹ phẩm») cho danh sách tạp — nói điều đó khi trình bày và gợi ý nhóm hẹp hơn để xem tiếp.
 2. **Douyin Shop** (`tu_khoa_douyin`): chỉ thêm khi người dùng **nói rõ** muốn xem hàng Trung Quốc; đắt hơn nhiều. Phải là **tiếng Trung giản thể**, bạn dịch và cho người dùng xem («son kem» → 唇釉).
 
-Giá: **~270–1.430 đ mỗi lượt** — không xem Douyin khoảng 270 đ, có xem tới khoảng 1.430 đ. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
+Giá: **~27–143 token mỗi lượt** — không xem Douyin khoảng 27 token, có xem tới khoảng 143 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
-**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ trừ token theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
 ## Chạy
 
@@ -40,7 +40,7 @@ chay_cong_cu(ma="hgtimhot", tham_so={"tu_khoa": "son kem", "tu_khoa_douyin": "�
 | Tham số | Bắt buộc | Ý nghĩa |
 |---|---|---|
 | `tu_khoa` | có | Loại hàng bằng tiếng Việt, vd đồ gia dụng nhà bếp |
-| `tu_khoa_douyin` | không | Từ khoá TIẾNG TRUNG để xem Douyin Shop, vd 厨房小工具. Bỏ trống thì không xem Douyin (rẻ hơn khoảng 1.150 đ) |
+| `tu_khoa_douyin` | không | Từ khoá TIẾNG TRUNG để xem Douyin Shop, vd 厨房小工具. Bỏ trống thì không xem Douyin (rẻ hơn khoảng 115 token) |
 | `so_mon` | không | Số món liệt kê mỗi nơi (mặc định 8) (từ 3 đến 10) |
 
 - Kết quả chỉ có `loi`, không có `ket_qua`: chưa trừ token. Sai tên tham số hay dạng giá trị thì sửa và gọi lại **đúng lượt đó** một lần; thiếu thông tin của người dùng, hết token, nguồn bận thì dừng và báo.
@@ -89,4 +89,4 @@ Bố cục cho báo cáo này:
 4. **Bên Trung Quốc** (nếu có) — 3–5 món: tên gốc + bản dịch, giá ¥, số bán trong tháng, link.
 5. **Phải tự kiểm trước khi nhập** — điều danh sách này CHƯA cho biết, một hai ý sát với món bạn vừa nêu: món đó đang lên hay đã qua đỉnh (số đã bán tính từ trước tới nay) · còn chỗ cho người mới không · giá nhập.
 6. **Dòng lưu ý cuối** gồm: lấy lúc nào (kết quả không ghi giờ thì nói vậy) · đây là dữ liệu công khai HG Trend lấy lúc chạy · phạm vi của những con số đã dùng (theo cột «Lưu ý» ở bảng trên) · phần nào lần này không lấy được. Với báo cáo này thường là: đây là các món ở trang kết quả đầu cho cụm này, không phải bảng xếp hạng cả sàn · số đã bán tính từ trước tới nay, không cho biết món nào đang lên · điểm Google là mức so giữa các cụm trong lượt này, không phải số lượt tìm · hàng bên Trung Quốc có về Việt Nam không, báo cáo không đo.
-7. **Việc nên làm tiếp** — một câu: thường là xem kỹ món vừa nêu bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~270–1.040 đ) hoặc «Chi tiết một sản phẩm TikTok Shop» (`hgymznld`) — lượt thêm, nêu giá và chờ họ đồng ý.
+7. **Việc nên làm tiếp** — một câu: thường là xem kỹ món vừa nêu bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token) hoặc «Chi tiết một sản phẩm TikTok Shop» (`hgymznld`) — lượt thêm, nêu giá và chờ họ đồng ý.

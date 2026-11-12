@@ -6,7 +6,7 @@ description: Xem một đối thủ (thương hiệu, shop, kênh) đang đăng 
 
 Người dùng muốn biết đối thủ đang làm gì. Chạy báo cáo «Soi kênh, bài đăng, quảng cáo đối thủ» (`hgsoidt`) cho MỘT đối thủ, hoặc tìm mẫu quảng cáo theo ngành, rồi kể đúng thứ nhìn thấy được: đây là dữ liệu công khai về **bài đăng và mẫu quảng cáo**, không phải doanh thu, số đơn hay tiền quảng cáo của họ.
 
-Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_cong_cu` (tham số và giá, 0 đồng) · `chay_cong_cu` (chạy thật, tính tiền). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
+Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_cong_cu` (tham số và giá, 0 token) · `chay_cong_cu` (chạy thật, trừ token). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
 
 ## Khi nào dùng
 
@@ -19,7 +19,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 | Shop đối thủ trên Shopee, Lazada, Tiki, Sendo, Zalo | Chưa có; hỏi họ có muốn soi kênh mạng xã hội và quảng cáo của đối thủ đó không |
 | Khách nói gì dưới bài của đối thủ | Báo cáo «Tóm tắt bình luận: khách khen, chê gì» (`hgbinhluan`), cần link bài |
 | «Đối thủ của mình» mà không có tên hay link | Hỏi tên thương hiệu hoặc link kênh. Không đoán |
-| Nhiều đối thủ | Mỗi đối thủ một lượt; cộng tiền |
+| Nhiều đối thủ | Mỗi đối thủ một lượt; cộng token |
 
 ## Trước khi chạy
 
@@ -43,11 +43,11 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_
 - Quảng cáo Facebook cần `thuong_hieu`; quảng cáo Google cần `ten_mien`. Thiếu ô nào thì phần đó không được tra — nói «chưa tra phần đó», đừng nói «họ không chạy quảng cáo».
 - `xem_quang_cao_tiktok` chủ yếu ra quảng cáo ở châu Âu; chỉ bật khi người dùng nói rõ cần.
 
-Giá: **~100–820 đ mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
+Giá: **~10–82 token mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
-**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ trừ token theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
 ## Chạy
 
@@ -76,10 +76,10 @@ chay_cong_cu(ma="hgsoidt", tham_so={"tiktok": "@tenkenh", "tu_tim_kenh": false})
 
 | Cần gì | Công cụ | Tham số chính |
 |---|---|---|
-| Mẫu Facebook / Instagram đang chạy theo từ khoá | «Quảng cáo đang chạy trên Facebook» (`hgycspqa`, ~100 đ) | `query` = từ khoá ngành tiếng Việt; `country` = «VN» |
-| Mẫu TikTok theo từ khoá | «Tìm quảng cáo TikTok theo từ khoá» (`hg76xztf`, ~100 đ) | `query`. Thư viện này chủ yếu có quảng cáo ở châu Âu — ngành hàng Việt Nam thường ra ít mẫu, mẫu nhỏ |
+| Mẫu Facebook / Instagram đang chạy theo từ khoá | «Quảng cáo đang chạy trên Facebook» (`hgycspqa`, ~10 token) | `query` = từ khoá ngành tiếng Việt; `country` = «VN» |
+| Mẫu TikTok theo từ khoá | «Tìm quảng cáo TikTok theo từ khoá» (`hg76xztf`, ~10 token) | `query`. Thư viện này chủ yếu có quảng cáo ở châu Âu — ngành hàng Việt Nam thường ra ít mẫu, mẫu nhỏ |
 
-Riêng **quảng cáo Google của MỘT tên miền** (không tìm theo từ khoá ngành được): «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~30–100 đ hoặc ~1.300 đ/kết quả), tham số `domain`, `region` = «VN». Giá có phần tính **theo số kết quả**: luôn báo giá và chờ đồng ý. Người dùng muốn soi cả kênh lẫn quảng cáo của đối thủ đó thì dùng báo cáo `hgsoidt` ở trên.
+Riêng **quảng cáo Google của MỘT tên miền** (không tìm theo từ khoá ngành được): «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~3–10 token hoặc ~130 token/kết quả), tham số `domain`, `region` = «VN». Giá có phần tính **theo số kết quả**: luôn báo giá và chờ đồng ý. Người dùng muốn soi cả kênh lẫn quảng cáo của đối thủ đó thì dùng báo cáo `hgsoidt` ở trên.
 
 Công cụ lẻ trả **dữ liệu thô** tiếng Anh. Với `hgycspqa`: mỗi mục trong `searchResults` là một mẫu — đọc `page_name`, `is_active`, `display_format`, `cta_text` và chữ quảng cáo. Kết quả thường bị cắt (trường `rut_gon` ghi giữ bao nhiêu trên tổng số): nói mới xem được chừng ấy mẫu. Tìm theo từ khoá ra rất nhiều mẫu không liên quan: **đọc chữ từng mẫu**, chỉ kể mẫu đúng ngành, nói đã bỏ bao nhiêu mẫu lạc đề. Với `hg76xztf`: các mẫu nằm trong `ads`, `total` là tổng số mẫu khớp — nói đã xem bao nhiêu trên tổng. `estimated_audience` (dạng «0-1K») là khung ước lượng của thư viện, chủ yếu ở châu Âu: **không phải lượt xem, không phải số người thấy quảng cáo ở Việt Nam**. Bỏ qua các trường về tài khoản của nguồn.
 

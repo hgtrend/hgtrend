@@ -7,8 +7,8 @@ description: Lấy dữ liệu công khai từ mạng xã hội, sàn bán hàng
 HG Trend là kho công cụ lấy dữ liệu công khai cho người bán hàng và làm marketing ở Việt Nam, gọi qua kết nối `hgtrend`:
 
 ```
-tim_cong_cu(viec_can_lam="hàng sỉ 1688 quạt mini")          # tìm công cụ — 0 đồng
-xem_cong_cu(ma="hgxxxxxx")                                    # tham số, giá — 0 đồng
+tim_cong_cu(viec_can_lam="hàng sỉ 1688 quạt mini")          # tìm công cụ — 0 token
+xem_cong_cu(ma="hgxxxxxx")                                    # tham số, giá — 0 token
 chay_cong_cu(ma="hgxxxxxx", tham_so={"tên tham số": "giá trị"})   # chạy thật — trừ token mỗi lượt
 ```
 
@@ -20,16 +20,16 @@ Người dùng trả tiền từng lượt chạy và dựa vào kết quả đ�
 
 **Việc khớp một báo cáo tổng hợp thì dùng báo cáo đó** — một lượt gọi, HG gom nhiều nơi và tính sẵn:
 
-- «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~270–1.040 đ mỗi lượt) — dùng khi khách hỏi có nên nhập/bán món X không, thị trường món X ra sao. Cần tên MỘT món (`mon_hang`). Điểm Google là mức 0–100, không phải số lượt tìm; người bán và giá là các món ở trang kết quả đầu; giá trung bình tính sau khi HG bỏ món giá sốc và giá lệch hẳn — nói tính trên mấy món. `tu_khoa_1688` tốn thêm, chỉ gửi khi người dùng nói rõ cần giá sỉ Trung Quốc.
-- «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~270–1.430 đ mỗi lượt) — dùng khi khách hỏi nên bán gì, món gì đang hot. Cần một LOẠI HÀNG (`tu_khoa`) — hỏi chung «nên bán gì» thì hỏi lại loại hàng, đừng tự chọn. Lượt bán là số cộng dồn, không phải «tuần này»; không phải bảng xếp hạng cả sàn. `tu_khoa_douyin` tốn thêm, phải là tiếng Trung, chỉ gửi khi người dùng nói rõ muốn xem hàng Trung Quốc.
-- «Soi kênh, bài đăng, quảng cáo đối thủ» (`hgsoidt`, ~100–820 đ mỗi lượt) — dùng khi khách hỏi đối thủ đang làm gì, chạy quảng cáo gì. HG tự tìm kênh theo tên và có thể nhầm kênh trùng tên: **nêu tên + link từng kênh đã soi** (`kenh_hg_tu_tim`) để người dùng xác nhận. Số liệu tính trên loạt bài mới nhất. Quảng cáo Facebook cần `thuong_hieu`, Google cần `ten_mien` — thiếu thì nói «chưa tra», đừng nói «không chạy quảng cáo». `tu_tim_kenh` (mặc định bật, HG dò thêm kênh chưa được đưa) chỉ đặt = false khi người dùng chỉ muốn xem đúng kênh đã đưa, hoặc chỉ hỏi quảng cáo. `xem_quang_cao_tiktok` chủ yếu ra quảng cáo ở châu Âu.
-- «Tóm tắt bình luận: khách khen, chê gì» (`hgbinhluan`, ~20–300 đ mỗi lượt) — dùng khi khách hỏi người mua nói gì về sản phẩm / đối thủ / cửa hàng. Mỗi lượt một link hoặc một địa điểm; chỉ nhận link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, hoặc tên / link Google Maps — nền tảng khác thì `tim_cong_cu`. Luôn nêu **đã đọc bao nhiêu câu** (`so_binh_luan_da_doc`). HG xếp khen / chê bằng dò từ khoá, hay sai: tự đọc `binh_luan_mau` rồi mới tóm, đừng báo tỉ lệ của máy như kết quả.
+- «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token mỗi lượt) — dùng khi khách hỏi có nên nhập/bán món X không, thị trường món X ra sao. Cần tên MỘT món (`mon_hang`). Điểm Google là mức 0–100, không phải số lượt tìm; người bán và giá là các món ở trang kết quả đầu; giá trung bình tính sau khi HG bỏ món giá sốc và giá lệch hẳn — nói tính trên mấy món. `tu_khoa_1688` tốn thêm, chỉ gửi khi người dùng nói rõ cần giá sỉ Trung Quốc.
+- «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token mỗi lượt) — dùng khi khách hỏi nên bán gì, món gì đang hot. Cần một LOẠI HÀNG (`tu_khoa`) — hỏi chung «nên bán gì» thì hỏi lại loại hàng, đừng tự chọn. Lượt bán là số cộng dồn, không phải «tuần này»; không phải bảng xếp hạng cả sàn. `tu_khoa_douyin` tốn thêm, phải là tiếng Trung, chỉ gửi khi người dùng nói rõ muốn xem hàng Trung Quốc.
+- «Soi kênh, bài đăng, quảng cáo đối thủ» (`hgsoidt`, ~10–82 token mỗi lượt) — dùng khi khách hỏi đối thủ đang làm gì, chạy quảng cáo gì. HG tự tìm kênh theo tên và có thể nhầm kênh trùng tên: **nêu tên + link từng kênh đã soi** (`kenh_hg_tu_tim`) để người dùng xác nhận. Số liệu tính trên loạt bài mới nhất. Quảng cáo Facebook cần `thuong_hieu`, Google cần `ten_mien` — thiếu thì nói «chưa tra», đừng nói «không chạy quảng cáo». `tu_tim_kenh` (mặc định bật, HG dò thêm kênh chưa được đưa) chỉ đặt = false khi người dùng chỉ muốn xem đúng kênh đã đưa, hoặc chỉ hỏi quảng cáo. `xem_quang_cao_tiktok` chủ yếu ra quảng cáo ở châu Âu.
+- «Tóm tắt bình luận: khách khen, chê gì» (`hgbinhluan`, ~2–30 token mỗi lượt) — dùng khi khách hỏi người mua nói gì về sản phẩm / đối thủ / cửa hàng. Mỗi lượt một link hoặc một địa điểm; chỉ nhận link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, hoặc tên / link Google Maps — nền tảng khác thì `tim_cong_cu`. Luôn nêu **đã đọc bao nhiêu câu** (`so_binh_luan_da_doc`). HG xếp khen / chê bằng dò từ khoá, hay sai: tự đọc `binh_luan_mau` rồi mới tóm, đừng báo tỉ lệ của máy như kết quả.
 
 Ba báo cáo khác cùng nhóm vẫn chạy được, nhưng dữ liệu có giới hạn lớn hơn mà người dùng phải được biết TRƯỚC khi trả tiền:
 
-- «Báo cáo trend TikTok hôm nay» (`hgtrendtt`, ~220–290 đ): Mỗi bảng hashtag chỉ có 3 hashtag đầu. Mẫu video lấy từ trang «Dành cho bạn» nên **có lẫn video nước khác, có lượt chiếm phần lớn**: đọc `video_cua_nuoc_nay` trong `hg_nhan_xet` (dạng «11/26») và nói đúng con số đó. Hỏi trend trong nước thì đặt `chi_video_trong_nuoc` = true ngay từ lượt đầu; còn dưới chừng 10 video Việt Nam thì chỉ liệt kê tham khảo. Nhạc, hashtag, độ dài video… đều chỉ đếm trên mẫu này; không có bảng nhạc chính thức.
-- «Bản tin trend tuần theo ngành hàng» (`hgbantin`, ~220–290 đ): Chỉ theo dõi **vài từ khoá** (tối đa 5: mặc định của ngành hoặc người dùng đưa qua `tu_khoa`), không quét cả ngành — nêu đúng các từ đó. `quang_cao_tiktok_hieu_qua` là mẫu của **nhiều nước**; mặc định bật, không cần thì đặt `xem_quang_cao_mau` = false. Hashtag ngành chỉ có 3 cái đầu.
-- «Dịch bài Trung Quốc sang tiếng Việt» (`hgdichtq`, ~770–1.160 đ): Chỉ nhận link bài Tiểu Hồng Thư hoặc video Douyin. HG lấy tiêu đề và chữ mô tả (`nguyen_van`) + giải nghĩa từ lóng (`tu_lang_hg_giai_nghia`); **phần dịch do bạn làm**, theo `yeu_cau_cho_tro_ly`. Không nghe lời nói, không đọc chữ trong hình: bài chỉ có hashtag thì gần như không có gì để dịch — nói trước. Người dùng đã dán sẵn chữ tiếng Trung thì tự dịch, đừng gọi công cụ.
+- «Báo cáo trend TikTok hôm nay» (`hgtrendtt`, ~22–29 token): Mỗi bảng hashtag chỉ có 3 hashtag đầu. Mẫu video lấy từ trang «Dành cho bạn» nên **có lẫn video nước khác, có lượt chiếm phần lớn**: đọc `video_cua_nuoc_nay` trong `hg_nhan_xet` (dạng «11/26») và nói đúng con số đó. Hỏi trend trong nước thì đặt `chi_video_trong_nuoc` = true ngay từ lượt đầu; còn dưới chừng 10 video Việt Nam thì chỉ liệt kê tham khảo. Nhạc, hashtag, độ dài video… đều chỉ đếm trên mẫu này; không có bảng nhạc chính thức.
+- «Bản tin trend tuần theo ngành hàng» (`hgbantin`, ~22–29 token): Chỉ theo dõi **vài từ khoá** (tối đa 5: mặc định của ngành hoặc người dùng đưa qua `tu_khoa`), không quét cả ngành — nêu đúng các từ đó. `quang_cao_tiktok_hieu_qua` là mẫu của **nhiều nước**; mặc định bật, không cần thì đặt `xem_quang_cao_mau` = false. Hashtag ngành chỉ có 3 cái đầu.
+- «Dịch bài Tiểu Hồng Thư, Douyin sang tiếng Việt» (`hgdichtq`, ~77–116 token): Chỉ nhận link bài Tiểu Hồng Thư hoặc video Douyin. HG lấy tiêu đề và chữ mô tả (`nguyen_van`) + giải nghĩa từ lóng (`tu_lang_hg_giai_nghia`); **phần dịch do bạn làm**, theo `yeu_cau_cho_tro_ly`. Không nghe lời nói, không đọc chữ trong hình: bài chỉ có hashtag thì gần như không có gì để dịch — nói trước. Người dùng đã dán sẵn chữ tiếng Trung thì tự dịch, đừng gọi công cụ.
 
 Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (đây là TÊN KỸ NĂNG, không phải mã công cụ — đừng đưa vào `chay_cong_cu`). Phiên có kỹ năng đó thì làm theo nó; không có thì dùng báo cáo tương ứng ở trên — gọi `xem_cong_cu` lấy tham số trước khi chạy:
 
@@ -38,8 +38,9 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 - kỹ năng «soi-doi-thu»: Xem một đối thủ (thương hiệu, shop, kênh) đang đăng gì trên TikTok, YouTube, Facebook, Instagram và đang chạy quảng cáo gì trên Facebook, Google.
 - kỹ năng «khach-khen-che»: Đọc bình luận, đánh giá của người mua / người xem rồi tóm lại họ khen gì, chê gì, hay hỏi gì.
 - kỹ năng «nguon-hang-1688»: Tìm nguồn hàng sỉ bên Trung Quốc trên 1688 và Taobao bằng HG Trend.
+- kỹ năng «bat-trend»: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo).
 
-**Việc khác** — dùng `tim_cong_cu` (kho có 564 công cụ, tìm không tốn tiền):
+**Việc khác** — dùng `tim_cong_cu` (kho có 564 công cụ, tìm không tốn token):
 
 - **Mỗi lần chỉ hỏi MỘT việc, bằng cụm ngắn 3–8 chữ:** tên nền tảng + việc cần làm («bình luận video TikTok», «chép lời video YouTube», «quảng cáo Facebook đối thủ»). Người dùng nhờ nhiều việc thì tách ra, tìm từng việc; đừng dán nguyên câu dài.
 - **Đọc `luu_y`, `thieu_nen_tang`, `chua_co` trong kết quả tìm.** `thieu_nen_tang` = nền tảng người dùng nhắc mà HG Trend chưa có; các món trả về không gồm nền tảng đó — nói với người dùng. `chua_co` = kho không làm việc này: nói thẳng, đừng lách.
@@ -55,13 +56,13 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 
 ## 2. Tiền
 
-- **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt định chạy cho một yêu cầu, theo mức cao của khoảng giá (giá lấy từ `tim_cong_cu`, `xem_cong_cu`). Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi. **Dòng đầu của câu trả lời** nói: đã chạy công cụ nào, cho cụm / link nào, lượt này tốn bao nhiêu.
-- **Tổng trên 2.000 đ: chưa chạy. Nêu số lượt, tổng tiền, chờ người dùng đồng ý rồi mới chạy.** Lượt chạy thêm cho cùng câu hỏi được cộng dồn vào tổng.
+- **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt định chạy cho một yêu cầu, theo mức cao của khoảng giá (giá lấy từ `tim_cong_cu`, `xem_cong_cu`). Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi. **Dòng đầu của câu trả lời** nói: đã chạy công cụ nào, cho cụm / link nào, lượt này tốn bao nhiêu.
+- **Tổng trên 200 token: chưa chạy. Nêu số lượt, tổng token, chờ người dùng đồng ý rồi mới chạy.** Lượt chạy thêm cho cùng câu hỏi được cộng dồn vào tổng.
 - Người dùng dặn «hỏi tôi trước khi chạy» thì từ đó hỏi trước mọi lượt.
-- **«Chạy luôn» chỉ cho đúng việc người dùng hỏi rõ.** Phần tuỳ chọn tốn thêm (1688, Douyin, thư viện quảng cáo…) chỉ bật khi họ nói rõ cần; phần mặc định bật mà họ không cần thì tắt (`xem_quang_cao_mau`; `tu_tim_kenh` khi họ chỉ muốn xem đúng kênh đã đưa). Tự tách một câu hỏi thành nhiều lượt (thử nhiều từ khoá, gọi nhiều công cụ cho cùng một việc) không phải «việc người dùng hỏi rõ»: nêu số lượt, tổng tiền và hỏi trước. Công cụ tính tiền theo số kết quả: luôn hỏi trước.
+- **«Chạy luôn» chỉ cho đúng việc người dùng hỏi rõ.** Phần tuỳ chọn tốn thêm (1688, Douyin, thư viện quảng cáo…) chỉ bật khi họ nói rõ cần; phần mặc định bật mà họ không cần thì tắt (`xem_quang_cao_mau`; `tu_tim_kenh` khi họ chỉ muốn xem đúng kênh đã đưa). Tự tách một câu hỏi thành nhiều lượt (thử nhiều từ khoá, gọi nhiều công cụ cho cùng một việc) không phải «việc người dùng hỏi rõ»: nêu số lượt, tổng token và hỏi trước. Công cụ trừ token theo số kết quả: luôn hỏi trước.
 - **Có `ket_qua` là đã trừ token** — kể cả khi ra ít, ra rỗng hay thiếu phần. Đừng tự chạy lại, đổi từ khoá hay đổi công cụ để chạy tiếp: báo kết quả và hỏi trước (thử cách gọi khác chỉ dành cho `tim_cong_cu`).
 - Kết quả chỉ có `loi` (không có `ket_qua`): chưa trừ token. Sai tên tham số / dạng mã thì sửa và gọi lại đúng lượt đó một lần; thiếu thông tin của người dùng, hết token, nguồn bận thì dừng và báo.
-- Giá ước tính ghi bằng **đồng**; số đã trừ ghi bằng **token** (`token_lan_nay`, `so_du_token`). Nói đúng từng đơn vị, đừng tự đổi.
+- Giá ước tính và số đã trừ đều ghi bằng **token** (`token_lan_nay`, `so_du_token`; 1 token = 10 đồng). Nói giá bằng token, đừng tự đổi ra đồng.
 
 ## 3. Trình bày kết quả
 

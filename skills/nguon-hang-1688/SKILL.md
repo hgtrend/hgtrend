@@ -6,19 +6,19 @@ description: Tìm nguồn hàng sỉ bên Trung Quốc trên 1688 và Taobao b�
 
 Người dùng muốn nhập hàng từ Trung Quốc. Chọn đúng công cụ, dịch từ khoá sang tiếng Trung cho đúng mặt hàng, rồi kể lại dữ liệu — đây là **dữ liệu thô của trang bán hàng Trung Quốc** (tiếng Trung, giá ¥), HG Trend không tính sẵn gì.
 
-Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_cong_cu` (tham số và giá, 0 đồng) · `chay_cong_cu` (chạy thật, tính tiền). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
+Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_cong_cu` (tham số và giá, 0 token) · `chay_cong_cu` (chạy thật, trừ token). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
 
 ## Chọn công cụ
 
 | Người dùng cần | Công cụ | Tham số |
 |---|---|---|
-| Tìm mẫu / xưởng / giá sỉ theo tên món | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~770 đ) | `keyword` tiếng Trung |
-| Có link 1688, xem chi tiết mẫu | «Thông tin sản phẩm sỉ 1688 theo mã» (`hgjhfxv6`, ~770 đ) | `itemId` = dãy số trong link (`…/offer/906325763433.html`) |
-| Tìm trên Taobao / Tmall (giá lẻ Trung Quốc) | «Tìm hàng trên Taobao, Tmall» (`hgfom7ek`, ~1.200 đ) | `keyword` tiếng Trung; lọc giá ¥ bằng `startPrice`, `endPrice`; chỉ Tmall bằng `tmall` |
-| Có link Taobao, xem chi tiết | «Thông tin sản phẩm Taobao, Tmall» (`hg7lsplr`, ~1.200–4.300 đ) | `itemId` = số sau `id=`. Mức cao vượt ngưỡng: **luôn báo giá và chờ đồng ý**. Chưa có số đo thật cho công cụ này — chỉ kể điều thấy rõ |
-| Người mua Trung Quốc đánh giá một mẫu Taobao | «Đánh giá sản phẩm trên Taobao, Tmall» (`hg3vypxg`, ~1.200 đ) | `itemId` của mẫu Taobao |
+| Tìm mẫu / xưởng / giá sỉ theo tên món | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token) | `keyword` tiếng Trung |
+| Có link 1688, xem chi tiết mẫu | «Thông tin sản phẩm sỉ 1688 theo mã» (`hgjhfxv6`, ~77 token) | `itemId` = dãy số trong link (`…/offer/906325763433.html`) |
+| Tìm trên Taobao / Tmall (giá lẻ Trung Quốc) | «Tìm hàng trên Taobao, Tmall» (`hgfom7ek`, ~120 token) | `keyword` tiếng Trung; lọc giá ¥ bằng `startPrice`, `endPrice`; chỉ Tmall bằng `tmall` |
+| Có link Taobao, xem chi tiết | «Thông tin sản phẩm Taobao, Tmall» (`hg7lsplr`, ~120–430 token) | `itemId` = số sau `id=`. Mức cao vượt ngưỡng: **luôn báo giá và chờ đồng ý**. Chưa có số đo thật cho công cụ này — chỉ kể điều thấy rõ |
+| Người mua Trung Quốc đánh giá một mẫu Taobao | «Đánh giá sản phẩm trên Taobao, Tmall» (`hg3vypxg`, ~120 token) | `itemId` của mẫu Taobao |
 
-Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~270–1.040 đ; phần 1688 trong đó có lượt không lấy được). Hàng đang hot bên Trung Quốc → «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~270–1.430 đ). Hai báo cáo này có giá riêng — nêu đúng giá của chúng, đừng coi như «gần nghìn đồng».
+Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token; phần 1688 trong đó có lượt không lấy được). Hàng đang hot bên Trung Quốc → «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token). Hai báo cáo này có giá riêng — nêu đúng giá của chúng, đừng coi như «gần 100 token».
 
 **HG Trend chưa làm được** — nói thẳng, đừng chạy công cụ khác thay:
 
@@ -33,13 +33,13 @@ Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món 
 2. Tìm 1688 **chỉ theo từ khoá**: không lọc được giá, số lượng tối thiểu, nơi bán. Đưa đặc điểm quan trọng nhất vào từ khoá; trên kết quả chỉ tự lọc được theo thứ có trong danh sách (tên, giá hiển thị, nơi bán). Số lượng tối thiểu phải xem chi tiết từng mẫu.
 3. Có link thì lấy đúng dãy số làm `itemId`; đừng tìm lại bằng từ khoá.
 
-**Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
+**Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
-**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ trừ token theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
-Mỗi công cụ trong bảng trên gần nghìn đồng một lượt: lượt đầu chỉ chạy **một công cụ, đúng nơi và đúng việc người dùng hỏi**.
+Mỗi công cụ trong bảng trên gần 100 token một lượt: lượt đầu chỉ chạy **một công cụ, đúng nơi và đúng việc người dùng hỏi**.
 
 ## Chạy
 

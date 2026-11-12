@@ -6,29 +6,29 @@ description: Xem một món định nhập hoặc định bán ở Việt Nam c�
 
 Người dùng sắp bỏ tiền nhập một món. Chạy báo cáo «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`) cho món đó rồi kể lại cho đúng: phần nào là số đo, phần nào là suy luận, phần nào dữ liệu không nói được.
 
-Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 đồng) · `xem_cong_cu` (tham số và giá, 0 đồng) · `chay_cong_cu` (chạy thật, tính tiền). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
+Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_cong_cu` (tham số và giá, 0 token) · `chay_cong_cu` (chạy thật, trừ token). Công cụ nào chưa ghi tham số ở dưới thì `xem_cong_cu` trước; đừng đoán tên tham số.
 
 ## Khi nào dùng
 
 | Người dùng hỏi | Làm gì |
 |---|---|
 | Nêu một món cụ thể («định nhập quạt mini cầm tay») | Dùng kỹ năng này |
-| So 2–3 món | Dùng kỹ năng này, mỗi món một lượt; tính tổng tiền bằng con số. Đừng trả lời thay bằng hiểu biết chung |
-| Chưa có món, hỏi «nên bán gì» | Báo cáo «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~270–1.430 đ) |
-| Chỉ cần mẫu, xưởng, giá sỉ Trung Quốc | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~770 đ) |
+| So 2–3 món | Dùng kỹ năng này, mỗi món một lượt; tính tổng token bằng con số. Đừng trả lời thay bằng hiểu biết chung |
+| Chưa có món, hỏi «nên bán gì» | Báo cáo «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token) |
+| Chỉ cần mẫu, xưởng, giá sỉ Trung Quốc | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token) |
 | Hỏi đúng số liệu của Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem Google + TikTok Shop thay không |
 | Đang bán ở các sàn đó nhưng hỏi về MÓN | Vẫn dùng kỹ năng này; dòng đầu câu trả lời nói rõ không có số liệu của sàn họ nhắc |
 
 ## Trước khi chạy
 
 1. **Tên món** (`mon_hang`): như người mua gõ — tiếng Việt có dấu, ngắn nhưng đủ phân biệt («quạt mini cầm tay», không phải «quạt»). Bỏ tên thương hiệu trừ khi họ muốn xem đúng thương hiệu. Rút từ lời tả dài thì nói bạn tìm theo cụm nào; phải đoán món thì chờ họ xác nhận.
-2. **Giá sỉ 1688** (`tu_khoa_1688`): chỉ thêm khi người dùng **nói rõ** muốn giá sỉ, giá nhập Trung Quốc hay nhắc 1688 — «định nhập món X» chưa phải yêu cầu này: chạy phần cơ bản; cuối câu trả lời hỏi có muốn xem giá sỉ không — khi đó chạy riêng «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~770 đ), đừng chạy lại cả báo cáo này. Từ khoá phải là **tiếng Trung giản thể**, bạn dịch và cho người dùng xem («quạt mini cầm tay» → 手持风扇).
+2. **Giá sỉ 1688** (`tu_khoa_1688`): chỉ thêm khi người dùng **nói rõ** muốn giá sỉ, giá nhập Trung Quốc hay nhắc 1688 — «định nhập món X» chưa phải yêu cầu này: chạy phần cơ bản; cuối câu trả lời hỏi có muốn xem giá sỉ không — khi đó chạy riêng «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token), đừng chạy lại cả báo cáo này. Từ khoá phải là **tiếng Trung giản thể**, bạn dịch và cho người dùng xem («quạt mini cầm tay» → 手持风扇).
 
-Giá: **~270–1.040 đ mỗi lượt** — không xem 1688 khoảng 270 đ, có xem tới khoảng 1.040 đ. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng tiền mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 2.000 đ: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 2.000 đ: **chưa chạy** — nêu số lượt, tổng tiền và **chờ đồng ý**.
+Giá: **~27–104 token mỗi lượt** — không xem 1688 khoảng 27 token, có xem tới khoảng 104 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
-**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng đồng). Ngay sau dòng này là câu mở trả lời thẳng.
+**Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
-Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ tính tiền theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
+Chỉ «chạy luôn» cho đúng việc người dùng hỏi rõ. **Hỏi trước** khi: bật phần tuỳ chọn tốn thêm mà họ chưa nói rõ cần · tự chạy thêm lượt (nơi khác, từ khoá khác, xem chi tiết) · thiếu thông tin bắt buộc hoặc phải đoán họ muốn gì · công cụ trừ token theo số kết quả hay có mức cao vượt ngưỡng. Một phần điều họ hỏi mà dữ liệu không trả lời được thì nói ngay ở dòng đầu. Họ **chỉ** hỏi thứ dữ liệu không có (số liệu riêng của một sàn chưa có, doanh thu một shop…) thì **không chạy**: nói chưa có và hỏi họ có muốn xem phần gần nhất không.
 
 ## Chạy
 
@@ -40,7 +40,7 @@ chay_cong_cu(ma="hgxemmon", tham_so={"mon_hang": "quạt mini cầm tay", "tu_kh
 | Tham số | Bắt buộc | Ý nghĩa |
 |---|---|---|
 | `mon_hang` | có | Tên món bằng tiếng Việt, vd quạt mini cầm tay |
-| `tu_khoa_1688` | không | Từ khoá TIẾNG TRUNG để xem giá sỉ 1688, vd 手持风扇. Bỏ trống thì không xem 1688 (rẻ hơn khoảng 770 đ) |
+| `tu_khoa_1688` | không | Từ khoá TIẾNG TRUNG để xem giá sỉ 1688, vd 手持风扇. Bỏ trống thì không xem 1688 (rẻ hơn khoảng 77 token) |
 | `so_mon` | không | Số món mẫu mỗi nơi (mặc định 5) (từ 3 đến 10) |
 
 Chờ vài chục giây là bình thường.
@@ -96,5 +96,5 @@ Bố cục cho báo cáo này:
 
 - **Dữ liệu Google thưa** (hai điểm đều chỉ vài điểm, phần lớn số tuần gần như không ai tìm): không nói «đang lên», «đang xuống», «qua mùa» dù `nhan_xet` ghi vậy, không đọc `thang_tim_nhieu` thành mùa cao điểm. Nói: dữ liệu Google quá thưa để đọc xu hướng; chưa chắc là không ai mua — xem phần người bán. Về phía người tìm thì câu mở là «chưa đủ dữ liệu để khuyên».
 - **Món theo mùa**: cả năm gần như không ai tìm nhưng 4 tuần gần nhất vọt lên rõ — tín hiệu thật, cứ nêu.
-- `gia_si_1688` ra 0 món mà người dùng vẫn cần: đề nghị chạy riêng «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~770 đ) — lượt thêm, hỏi trước.
+- `gia_si_1688` ra 0 món mà người dùng vẫn cần: đề nghị chạy riêng «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token) — lượt thêm, hỏi trước.
 - Hỏi «bao nhiêu người tìm mỗi tháng», doanh thu một shop, món bán chạy nhất cả sàn: báo cáo này không có.

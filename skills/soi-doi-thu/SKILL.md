@@ -76,7 +76,7 @@ chay_cong_cu(ma="hgsoidt", tham_so={"tiktok": "@tenkenh", "tu_tim_kenh": false})
 
 | Cần gì | Công cụ | Tham số chính |
 |---|---|---|
-| Mẫu Facebook / Instagram đang chạy theo từ khoá | «Quảng cáo đang chạy trên Facebook» (`hgycspqa`, ~10 token) | `query` = từ khoá ngành tiếng Việt; `country` = «VN» |
+| Mẫu Facebook / Instagram đang chạy theo từ khoá | «Quảng cáo đang chạy trên Facebook» (`hgycspqa`, ~10 token) | `query` = từ khoá ngành tiếng Việt; `country` = «VN»; `status` = «ACTIVE» (luôn kèm cả ba: thiếu `status` thì kết quả không có các trường ghi dưới đây) |
 | Mẫu TikTok theo từ khoá | «Tìm quảng cáo TikTok theo từ khoá» (`hg76xztf`, ~10 token) | `query`. Thư viện này chủ yếu có quảng cáo ở châu Âu — ngành hàng Việt Nam thường ra ít mẫu, mẫu nhỏ |
 
 Riêng **quảng cáo Google của MỘT tên miền** (không tìm theo từ khoá ngành được): «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~3–10 token hoặc ~130 token/kết quả), tham số `domain`, `region` = «VN». Giá có phần tính **theo số kết quả**: luôn báo giá và chờ đồng ý. Người dùng muốn soi cả kênh lẫn quảng cáo của đối thủ đó thì dùng báo cáo `hgsoidt` ở trên.

@@ -19,7 +19,7 @@ tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá
 | «Chạy Google Ads cho [sản phẩm] nên chọn từ khoá nào?» | Từ khoá Google Ads | khoảng 65–85 token |
 | «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 2–30 token |
 | «Tìm nguồn sỉ quạt cầm tay trên 1688» | Nguồn hàng 1688 | khoảng 77 token. Xem chi tiết một mẫu 1688: thêm khoảng 77 token. Tìm cả trên Taobao, Tmall: thêm khoảng 120 token |
-| Việc lẻ khác, ví dụ chép lời một video TikTok hoặc YouTube | Kỹ năng chung «hgtrend» tìm trong hơn 500 công cụ | giá ước tính từng công cụ ghi ở trang chủ hgtrend.com |
+| Việc lẻ khác, ví dụ chép lời một video TikTok hoặc YouTube | Kỹ năng chung «hgtrend» tìm trong hơn 700 công cụ | giá ước tính từng công cụ ghi ở trang chủ hgtrend.com |
 
 Một lần hỏi có thể chạy hơn một công cụ, nên số token thật có thể cao hơn dòng ghi ở bảng; xem điều 3 và 4 ở mục «6 điều phải biết» bên dưới.
 

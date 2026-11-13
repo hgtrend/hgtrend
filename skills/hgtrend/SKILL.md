@@ -43,7 +43,7 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 - kỹ năng «tim-kol-koc»: Tìm KOL, KOC trên TikTok ở Việt Nam cho một ngành hàng hay một sản phẩm, rồi soát từng kênh trước khi liên hệ.
 - kỹ năng «tu-khoa-google»: Tìm và so từ khoá để chạy quảng cáo Google (Google Ads) ở Việt Nam.
 
-**Việc khác** — dùng `tim_cong_cu` (kho có 564 công cụ, tìm không tốn token):
+**Việc khác** — dùng `tim_cong_cu` (kho có 783 công cụ, tìm không tốn token):
 
 - **Mỗi lần chỉ hỏi MỘT việc, bằng cụm ngắn 3–8 chữ:** tên nền tảng + việc cần làm («bình luận video TikTok», «chép lời video YouTube», «quảng cáo Facebook đối thủ»). Người dùng nhờ nhiều việc thì tách ra, tìm từng việc; đừng dán nguyên câu dài.
 - **Đọc `luu_y`, `thieu_nen_tang`, `chua_co` trong kết quả tìm.** `thieu_nen_tang` = nền tảng người dùng nhắc mà HG Trend chưa có; các món trả về không gồm nền tảng đó — nói với người dùng. `chua_co` = kho không làm việc này: nói thẳng, đừng lách.

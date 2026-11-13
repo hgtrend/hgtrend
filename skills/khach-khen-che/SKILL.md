@@ -14,7 +14,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 |---|---|
 | Link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, Google Maps | Tham số `link` (dán nguyên, đừng sửa) |
 | Tên quán / cửa hàng kèm khu vực hay địa chỉ | Tham số `dia_diem`, đủ để Google Maps ra đúng một nơi |
-| Chỉ có tên sản phẩm, không có link | Hỏi link họ muốn đọc. Họ nhờ tìm giúp: tìm trên TikTok Shop bằng «Tìm sản phẩm trên TikTok Shop» (`hgxe6eri`, ~10–77 token), rồi **dừng lại cho họ chọn đúng món** trước khi đọc đánh giá |
+| Chỉ có tên sản phẩm, không có link | Hỏi link họ muốn đọc. Họ nhờ tìm giúp: tìm trên TikTok Shop bằng «Tìm sản phẩm trên TikTok Shop» (`hgxe6eri`, ~5–77 token), rồi **dừng lại cho họ chọn đúng món** trước khi đọc đánh giá |
 | Đánh giá trên Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa đọc được. Nói vậy; hỏi họ có link TikTok Shop, video hay Google Maps của cùng món không |
 | Nhiều link | Mỗi link một lượt; tính tổng token, gợi ý chọn vài link đáng đọc nhất |
 | Link nền tảng khác (Instagram, Reddit, Amazon…) | `tim_cong_cu` với cụm «bình luận» + tên nền tảng |

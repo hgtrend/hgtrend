@@ -140,7 +140,7 @@ chay_cong_cu(ma="hgcloe4t", tham_so={"domain": "<tên miền>", "region": "VN"},
 
 | Cần gì | Công cụ | Tham số |
 |---|---|---|
-| Các mẫu tên miền này đang chạy trên Google | «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~3–10 token hoặc ~130 token/kết quả) | `domain` = tên miền, `region` = «VN» |
+| Các mẫu tên miền này đang chạy trên Google | «Quảng cáo Google của đối thủ» (`hgcloe4t`, ~10 token hoặc ~130 token/kết quả) | `domain` = tên miền, `region` = «VN» |
 | Chữ của một mẫu (tiêu đề, mô tả, trang đích) | «Chi tiết mẫu Google Ads theo link» (`hgxx5j4m`, ~10 token) | `url` = `adUrl` của mẫu đó |
 
 - Bỏ `nguon` thì khi nguồn 1 lỗi tạm, cửa có thể đổi sang nguồn tính **theo từng kết quả** — 40 mẫu là rất nhiều token. **Không điền `get_ad_details`**: bật là lượt chạy đắt gấp nhiều lần; muốn đọc chữ thì xem chi tiết từng mẫu.

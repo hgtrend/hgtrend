@@ -1,6 +1,6 @@
 ---
 name: hgtrend
-description: Lấy dữ liệu công khai từ mạng xã hội, sàn bán hàng và Google cho người bán hàng, làm marketing ở Việt Nam bằng kết nối HG Trend (hgtrend.com). Dùng TRƯỚC khi trả lời «không có công cụ» hoặc dùng tìm kiếm web chung, mỗi khi người dùng cần: món bán chạy, món định bán có ai tìm; đối thủ đăng gì, chạy quảng cáo gì; bình luận, đánh giá của khách; giá sỉ 1688, Taobao; chép lời / phụ đề video; số liệu kênh, bài đăng trên TikTok, YouTube, Facebook, Instagram, Threads, X, Reddit, LinkedIn; từ khoá và xu hướng Google, Google Maps; Amazon, Douyin, Tiểu Hồng Thư; đọc nội dung một trang web; lấy nguyên văn câu trả lời của ChatGPT, Gemini, Perplexity. Cũng dùng khi người dùng nhắc HG Trend. Use when the user needs live data from social platforms, marketplaces or Google for selling in Vietnam.
+description: Lấy dữ liệu công khai từ mạng xã hội, sàn bán hàng và Google cho người bán hàng, làm marketing ở Việt Nam bằng kết nối HG Trend (hgtrend.com). Dùng TRƯỚC khi trả lời «không có công cụ» hoặc dùng tìm kiếm web chung, mỗi khi người dùng cần: món bán chạy, món định bán có ai tìm; đối thủ đăng gì, chạy quảng cáo gì; bình luận, đánh giá của khách; giá sỉ 1688, Taobao; chép lời / phụ đề video; số liệu kênh, bài đăng trên TikTok, YouTube, Facebook, Instagram, Threads, X, Reddit, LinkedIn; từ khoá và xu hướng Google, Google Maps; câu hỏi về từ khoá, giá thầu, ngân sách Google Ads; Amazon, Douyin, Tiểu Hồng Thư; đọc nội dung một trang web; lấy nguyên văn câu trả lời của ChatGPT, Gemini, Perplexity. Cũng dùng khi người dùng nhắc HG Trend. Use when the user needs live data from social platforms, marketplaces or Google for selling in Vietnam.
 ---
 # HG Trend — cách dùng chung
 
@@ -41,13 +41,14 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 - kỹ năng «bat-trend»: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo).
 - kỹ năng «spy-quang-cao»: Spy quảng cáo của MỘT đối thủ.
 - kỹ năng «tim-kol-koc»: Tìm KOL, KOC trên TikTok ở Việt Nam cho một ngành hàng hay một sản phẩm, rồi soát từng kênh trước khi liên hệ.
-- kỹ năng «tu-khoa-google»: Tìm và so từ khoá để chạy quảng cáo Google (Google Ads) ở Việt Nam.
 
-**Việc khác** — dùng `tim_cong_cu` (kho có 783 công cụ, tìm không tốn token):
+**Việc khác** — dùng `tim_cong_cu` (kho có 642 công cụ, tìm không tốn token):
 
 - **Mỗi lần chỉ hỏi MỘT việc, bằng cụm ngắn 3–8 chữ:** tên nền tảng + việc cần làm («bình luận video TikTok», «chép lời video YouTube», «quảng cáo Facebook đối thủ»). Người dùng nhờ nhiều việc thì tách ra, tìm từng việc; đừng dán nguyên câu dài.
 - **Đọc `luu_y`, `thieu_nen_tang`, `chua_co` trong kết quả tìm.** `thieu_nen_tang` = nền tảng người dùng nhắc mà HG Trend chưa có; các món trả về không gồm nền tảng đó — nói với người dùng. `chua_co` = kho không làm việc này: nói thẳng, đừng lách.
 - Kết quả tìm xếp theo chữ trùng, **không cam kết khớp việc**. Tự kiểm từng món: đúng **nền tảng** chưa, đúng **việc** chưa. Không món nào đúng thì thử một hai cụm khác rồi nói «HG Trend chưa có công cụ cho việc này» — đừng chạy món gần giống rồi trình bày như thứ người dùng hỏi.
+
+**Google Ads** (chọn từ khoá, lượt tìm, giá thầu, ngân sách): HG Trend **không có** lượt tìm mỗi tháng, giá một lượt bấm (CPC), khung giá thầu hay mức cạnh tranh của từ khoá. Nói thẳng điều đó trước. Người dùng hỏi «chạy bao nhiêu tiền ra bao nhiêu đơn», «ngân sách bao nhiêu là đủ»: **không đưa con số dự báo nào** — kể cả «công thức» nhân giá lượt bấm với tỉ lệ ra đơn tự đặt, kể cả gọi là «ước chừng» hay «kịch bản». Thứ HG Trend có gần nhất, nêu giá và hỏi trước khi chạy: «Tìm từ khoá liên quan trên Google» (`hgtmknuf`) cho các cụm Google gợi ý khi người Việt gõ tìm (không kèm lượt tìm, không kèm giá thầu); «Độ hot của từ khoá trên Google» (`hgzpswyb`) cho mức quan tâm trên Google theo thời gian (thang 100, không phải lượt tìm). Số lượt tìm và giá thầu thật: người dùng xem trong Google Ads (Keyword Planner) bằng tài khoản của họ.
 
 **Trước lần chạy đầu của một công cụ, gọi `xem_cong_cu`** (trừ khi một kỹ năng riêng đã ghi tham số): có giá (để biết có vượt ngưỡng không) và tham số rồi mới chạy. Khi điền:
 

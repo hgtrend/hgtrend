@@ -15,7 +15,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 | Tìm mẫu / xưởng / giá sỉ theo tên món | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token) | `keyword` tiếng Trung |
 | Có link 1688, xem chi tiết mẫu | «Thông tin sản phẩm sỉ 1688 theo mã» (`hgjhfxv6`, ~77 token) | `itemId` = dãy số trong link (`…/offer/906325763433.html`) |
 | Tìm trên Taobao / Tmall (giá lẻ Trung Quốc) | «Tìm hàng trên Taobao, Tmall» (`hgfom7ek`, ~120 token) | `keyword` tiếng Trung; lọc giá ¥ bằng `startPrice`, `endPrice`; chỉ Tmall bằng `tmall` |
-| Có link Taobao, xem chi tiết | «Thông tin sản phẩm Taobao, Tmall» (`hg7lsplr`, ~120–430 token) | `itemId` = số sau `id=`. Mức cao vượt ngưỡng: **luôn báo giá và chờ đồng ý**. Chưa có số đo thật cho công cụ này — chỉ kể điều thấy rõ |
+| Có link Taobao, xem chi tiết | «Thông tin sản phẩm Taobao, Tmall» (`hg7lsplr`, ~120–200 token) | `itemId` = số sau `id=`. Giá cao, sát ngưỡng hỏi trước (200 token): **luôn báo giá và chờ đồng ý**. Chưa có số đo thật cho công cụ này — chỉ kể điều thấy rõ |
 | Người mua Trung Quốc đánh giá một mẫu Taobao | «Đánh giá sản phẩm trên Taobao, Tmall» (`hg3vypxg`, ~120 token) | `itemId` của mẫu Taobao |
 
 Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token; phần 1688 trong đó có lượt không lấy được). Hàng đang hot bên Trung Quốc → «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token). Hai báo cáo này có giá riêng — nêu đúng giá của chúng, đừng coi như «gần 100 token».

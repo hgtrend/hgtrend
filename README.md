@@ -55,7 +55,7 @@ Gỡ gói: `claude plugin uninstall hgtrend@hgtrend`.
 
 Các trợ lý này nối thẳng tới địa chỉ `https://hgtrend.com/mcp`, không cài bộ này. Cách nối từng loại ghi ở trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
 
-**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 10 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
+**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 9 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
 không nói giá ở dòng đầu, không được dặn nói «chưa có», không được dặn nêu số món đã tính. Trợ lý tự chọn công cụ, số token tiêu có thể khác bảng ở trên.
 
 ## 6 điều phải biết trước khi mua token

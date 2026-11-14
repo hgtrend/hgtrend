@@ -18,7 +18,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 | Có link Taobao, xem chi tiết | «Thông tin sản phẩm Taobao, Tmall» (`hg7lsplr`, ~120–200 token) | `itemId` = số sau `id=`. Giá cao, sát ngưỡng hỏi trước (200 token): **luôn báo giá và chờ đồng ý**. Chưa có số đo thật cho công cụ này — chỉ kể điều thấy rõ |
 | Người mua Trung Quốc đánh giá một mẫu Taobao | «Đánh giá sản phẩm trên Taobao, Tmall» (`hg3vypxg`, ~120 token) | `itemId` của mẫu Taobao |
 
-Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token; phần 1688 trong đó có lượt không lấy được). Hàng đang hot bên Trung Quốc → «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token). Hai báo cáo này có giá riêng — nêu đúng giá của chúng, đừng coi như «gần 100 token».
+Việc khác: muốn biết món đó bán ở Việt Nam ra sao → «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token; phần 1688 trong đó có lượt không lấy được). Hàng đang hot bên Trung Quốc → «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–153 token). Hai báo cáo này có giá riêng — nêu đúng giá của chúng, đừng coi như «gần 100 token».
 
 **HG Trend chưa làm được** — nói thẳng, đừng chạy công cụ khác thay:
 

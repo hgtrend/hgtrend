@@ -14,7 +14,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 |---|---|
 | Nêu một loại hàng («đồ gia dụng món nào đang hot») | Dùng kỹ năng này, chạy với đúng cụm họ nêu — đừng bắt họ thu hẹp trước |
 | Hỏi chung, không nêu loại hàng («giờ nên nhập gì») | **Hỏi lại họ quan tâm loại hàng nào** (gợi ý vài nhóm). Đừng tự chọn thay rồi chạy; đừng trả lời bằng hiểu biết chung như thể là dữ liệu |
-| Đã có một món cụ thể | Báo cáo «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token) |
+| Đã có một món cụ thể | Báo cáo «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token) |
 | Bán chạy «tuần này», «tháng này» ở Việt Nam | Chạy được, nhưng nói trước: số đã bán trên TikTok Shop là cộng dồn, không có số theo tuần / tháng |
 | Hàng hot bên Trung Quốc | Thêm `tu_khoa_douyin` |
 | Top bán chạy của Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem TikTok Shop thay không |
@@ -24,7 +24,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 1. **Loại hàng** (`tu_khoa`): cụm tiếng Việt có dấu như người mua gõ («đồ gia dụng nhà bếp», «son kem»). Cụm rộng («mỹ phẩm») cho danh sách tạp — nói điều đó khi trình bày và gợi ý nhóm hẹp hơn để xem tiếp.
 2. **Douyin Shop** (`tu_khoa_douyin`): chỉ thêm khi người dùng **nói rõ** muốn xem hàng Trung Quốc; đắt hơn nhiều. Phải là **tiếng Trung giản thể**, bạn dịch và cho người dùng xem («son kem» → 唇釉).
 
-Giá: **~27–143 token mỗi lượt** — không xem Douyin khoảng 27 token, có xem tới khoảng 143 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
+Giá: **~27–153 token mỗi lượt** — không xem Douyin khoảng 27 token, có xem tới khoảng 153 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
 **Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 
@@ -89,4 +89,4 @@ Bố cục cho báo cáo này:
 4. **Bên Trung Quốc** (nếu có) — 3–5 món: tên gốc + bản dịch, giá ¥, số bán trong tháng, link.
 5. **Phải tự kiểm trước khi nhập** — điều danh sách này CHƯA cho biết, một hai ý sát với món bạn vừa nêu: món đó đang lên hay đã qua đỉnh (số đã bán tính từ trước tới nay) · còn chỗ cho người mới không · giá nhập.
 6. **Dòng lưu ý cuối** gồm: lấy lúc nào (kết quả không ghi giờ thì nói vậy) · đây là dữ liệu công khai HG Trend lấy lúc chạy · phạm vi của những con số đã dùng (theo cột «Lưu ý» ở bảng trên) · phần nào lần này không lấy được. Với báo cáo này thường là: đây là các món ở trang kết quả đầu cho cụm này, không phải bảng xếp hạng cả sàn · số đã bán tính từ trước tới nay, không cho biết món nào đang lên · điểm Google là mức so giữa các cụm trong lượt này, không phải số lượt tìm · hàng bên Trung Quốc có về Việt Nam không, báo cáo không đo.
-7. **Việc nên làm tiếp** — một câu: thường là xem kỹ món vừa nêu bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token) hoặc «Chi tiết một sản phẩm TikTok Shop» (`hgymznld`) — lượt thêm, nêu giá và chờ họ đồng ý.
+7. **Việc nên làm tiếp** — một câu: thường là xem kỹ món vừa nêu bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token) hoặc «Chi tiết một sản phẩm TikTok Shop» (`hgymznld`) — lượt thêm, nêu giá và chờ họ đồng ý.

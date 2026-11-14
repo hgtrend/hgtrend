@@ -14,7 +14,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 |---|---|
 | Nêu một món cụ thể («định nhập quạt mini cầm tay») | Dùng kỹ năng này |
 | So 2–3 món | Dùng kỹ năng này, mỗi món một lượt; tính tổng token bằng con số. Đừng trả lời thay bằng hiểu biết chung |
-| Chưa có món, hỏi «nên bán gì» | Báo cáo «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token) |
+| Chưa có món, hỏi «nên bán gì» | Báo cáo «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–153 token) |
 | Chỉ cần mẫu, xưởng, giá sỉ Trung Quốc | «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token) |
 | Hỏi đúng số liệu của Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem Google + TikTok Shop thay không |
 | Đang bán ở các sàn đó nhưng hỏi về MÓN | Vẫn dùng kỹ năng này; dòng đầu câu trả lời nói rõ không có số liệu của sàn họ nhắc |
@@ -24,7 +24,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 1. **Tên món** (`mon_hang`): như người mua gõ — tiếng Việt có dấu, ngắn nhưng đủ phân biệt («quạt mini cầm tay», không phải «quạt»). Bỏ tên thương hiệu trừ khi họ muốn xem đúng thương hiệu. Rút từ lời tả dài thì nói bạn tìm theo cụm nào; phải đoán món thì chờ họ xác nhận.
 2. **Giá sỉ 1688** (`tu_khoa_1688`): chỉ thêm khi người dùng **nói rõ** muốn giá sỉ, giá nhập Trung Quốc hay nhắc 1688 — «định nhập món X» chưa phải yêu cầu này: chạy phần cơ bản; cuối câu trả lời hỏi có muốn xem giá sỉ không — khi đó chạy riêng «Tìm hàng sỉ trên 1688» (`hgy3sv74`, ~77 token), đừng chạy lại cả báo cáo này. Từ khoá phải là **tiếng Trung giản thể**, bạn dịch và cho người dùng xem («quạt mini cầm tay» → 手持风扇).
 
-Giá: **~27–104 token mỗi lượt** — không xem 1688 khoảng 27 token, có xem tới khoảng 104 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
+Giá: **~27–115 token mỗi lượt** — không xem 1688 khoảng 27 token, có xem tới khoảng 115 token. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
 **Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 

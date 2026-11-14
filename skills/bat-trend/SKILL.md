@@ -26,7 +26,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 | Trend trên Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem TikTok thay không |
 | Trend trên YouTube, Facebook, Instagram, Tiểu Hồng Thư… | Không thuộc hai báo cáo này: `tim_cong_cu` với cụm «đang hot» + tên nền tảng |
 | Chỉ hỏi «nhạc nào đang hot» | **Không chạy.** Nói HG Trend không có bảng xếp hạng nhạc; báo cáo trend chỉ đếm được trong mẫu vài chục video có bài nào lặp lại không (thường là không). Hỏi họ có muốn chạy báo cáo đó không, kèm giá |
-| Đã có một món cụ thể / muốn tìm món để bán | «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token) / «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–143 token) |
+| Đã có một món cụ thể / muốn tìm món để bán | «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token) / «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–153 token) |
 | «Mỗi tuần gửi tôi bản tin» | HG Trend không tự gửi; mỗi lần xem là một lượt chạy trừ token. Chạy lượt này và nói họ nhắn lại khi muốn bản mới. **Không tự đặt lịch chạy lặp lại**; họ nói rõ muốn đặt lịch thì nêu giá mỗi lượt, số lượt mỗi tháng, tổng token và chờ đồng ý |
 
 ## Trước khi chạy
@@ -149,4 +149,4 @@ Riêng với trend:
 5. **Mẫu quảng cáo** (nếu có) — hình thức hay gặp trong mẫu, kèm «… trong … mẫu»; một câu trích đã dịch.
 6. **Việc nên làm tuần này** — theo bạn, MỘT việc, dựa trên con số nào; không có gì lên xuống rõ thì nói «tuần này chưa thấy gì đổi rõ trong các từ theo dõi».
 7. **Dòng lưu ý cuối** gồm: lấy lúc nào (kết quả không ghi giờ thì nói vậy) · đây là dữ liệu công khai HG Trend lấy lúc chạy · phạm vi của những con số đã dùng (theo cột «Lưu ý» ở bảng trên) · phần nào lần này không lấy được. Với bản tin này thường là: chỉ theo dõi … từ, không phải cả ngành · điểm Google là mức so giữa các từ trong lượt này, không phải số lượt tìm · món bán chạy là trong … món ở trang kết quả đầu TikTok Shop, số đã bán tính từ trước tới nay · hashtag là 3 cái đầu bảng 7 ngày của ngành · mẫu quảng cáo là của nhiều nước · bản tin không so với tuần trước.
-8. **Việc nên làm tiếp** — một câu: thường là xem kỹ món hoặc từ đang lên bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–104 token), hoặc chạy lại bản tin với các từ sát hàng của họ — lượt thêm, nêu giá và chờ họ đồng ý.
+8. **Việc nên làm tiếp** — một câu: thường là xem kỹ món hoặc từ đang lên bằng «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token), hoặc chạy lại bản tin với các từ sát hàng của họ — lượt thêm, nêu giá và chờ họ đồng ý.

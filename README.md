@@ -10,10 +10,10 @@ tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá
 
 | Bạn nhắn | Kỹ năng lo việc này | Giá ước tính cho một lần hỏi như câu mẫu |
 |---|---|---|
-| «Tôi định bán quạt cầm tay mini, xem có ai tìm và ai bán chưa» | Xem món định bán | khoảng 27–104 token |
-| «Đồ gia dụng nhỏ đang có món nào bán chạy trên TikTok Shop?» | Tìm hàng hot | khoảng 27–143 token |
+| «Tôi định bán quạt cầm tay mini, xem có ai tìm và ai bán chưa» | Xem món định bán | khoảng 27–115 token |
+| «Đồ gia dụng nhỏ đang có món nào bán chạy trên TikTok Shop?» | Tìm hàng hot | khoảng 27–153 token |
 | «TikTok đang có trend gì?» hoặc «Tuần này ngành làm đẹp có gì mới?» | Bắt trend | khoảng 22–29 token mỗi câu |
-| «Thương hiệu này đang đăng gì trên TikTok, Facebook, và đang chạy quảng cáo gì trên Facebook, Google? [tên hoặc link kênh]» | Soi đối thủ | khoảng 10–82 token |
+| «Thương hiệu này đang đăng gì trên TikTok, Facebook, và đang chạy quảng cáo gì trên Facebook, Google? [tên hoặc link kênh]» | Soi đối thủ | khoảng 10–103 token |
 | «Spy ads [tên thương hiệu]: họ đang chạy mẫu nào, mẫu nào chạy lâu nhất?» | Spy quảng cáo đối thủ | khoảng 20–30 token |
 | «Tìm KOC review [sản phẩm]» hoặc «Kênh @… có đáng book không?» | Tìm KOL, KOC | khoảng 10 token để tìm, mỗi kênh soát khoảng 20 token |
 | «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 2–30 token |

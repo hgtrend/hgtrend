@@ -43,7 +43,7 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 - Quảng cáo Facebook cần `thuong_hieu`; quảng cáo Google cần `ten_mien`. Thiếu ô nào thì phần đó không được tra — nói «chưa tra phần đó», đừng nói «họ không chạy quảng cáo».
 - `xem_quang_cao_tiktok` chủ yếu ra quảng cáo ở châu Âu; chỉ bật khi người dùng nói rõ cần.
 
-Giá: **~10–82 token mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
+Giá: **~10–103 token mỗi lượt** — soi một kênh gần mức thấp, tự tìm đủ kênh và xem quảng cáo gần mức cao. Tính theo mức cao. **Rẻ thì chạy luôn, nói giá ngay đầu câu trả lời.** Cộng token mọi lượt của yêu cầu theo mức cao của khoảng giá. Tổng không quá 200 token: gọi `chay_cong_cu` luôn, không cần hỏi; **dòng đầu của câu trả lời** nói đã chạy gì và lượt này tốn bao nhiêu. Tổng trên 200 token: **chưa chạy** — nêu số lượt, tổng token và **chờ đồng ý**.
 
 **Dòng đầu của câu trả lời** (sau khi chạy) gồm ba ý, gọn trong một hai câu: đã chạy cho **cụm / link nào** (kèm từ đã dịch nếu có) · dữ liệu **lấy từ đâu** — người dùng có nhắc Shopee, Lazada, Tiki, Sendo, Zalo, kể cả chỉ là nơi họ đang bán, thì nói luôn «kết quả không có số liệu của Shopee» (đúng tên họ nhắc) · **lượt này tốn bao nhiêu** (số token đã trừ ghi trong kết quả; kết quả không ghi thì nêu giá ước tính bằng token; đừng tự đổi ra đồng). Ngay sau dòng này là câu mở trả lời thẳng.
 

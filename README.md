@@ -33,7 +33,7 @@ Làm một lần, không phải mở Terminal.
 2. Bấm **+ Add** ở góc phải, chọn **Add marketplace**, nhập `hgtrend/hgtrend`.
 3. Tìm gói **Hgtrend** (by HG Studio) trong danh sách và cài.
 4. Đóng Settings, mở một phiên trò chuyện, gõ `/mcp` vào ô nhắn rồi bấm Enter. Trong hộp «MCP servers», ở dòng **hgtrend — Provided by the Hgtrend plugin**, bấm **Connect**.
-5. Trình duyệt mở trang của hgtrend.com: đăng nhập HG Studio bằng tài khoản Google, rồi bấm «Cho phép».
+5. Trình duyệt mở trang của hgstudio.work: đăng nhập HG Studio bằng tài khoản Google, rồi bấm «Cho phép».
 6. Tài khoản phải có token thì mới chạy được. Token là điểm trả trước, mỗi lần chạy công cụ trừ một ít; chưa có thì đọc «6 điều phải biết» bên dưới rồi mua ở
    `https://hgstudio.work/bang-gia`.
 7. Quay lại app và nhắn việc.
@@ -45,7 +45,7 @@ claude plugin marketplace add hgtrend/hgtrend
 claude plugin install hgtrend@hgtrend
 ```
 
-Mở Claude Code, gõ `/mcp`, chọn dòng `hgtrend` đang ghi «needs authentication», bấm Enter; trình duyệt mở trang của hgtrend.com để đăng nhập và bấm «Cho phép».
+Mở Claude Code, gõ `/mcp`, chọn dòng `hgtrend` đang ghi «needs authentication», bấm Enter; trình duyệt mở trang của hgstudio.work để đăng nhập và bấm «Cho phép».
 Gói cài ở đây cũng hiện sẵn trong app Claude trên cùng máy, nhưng app là một kết nối riêng: trong app vẫn phải gõ `/mcp` rồi bấm **Connect** ở dòng hgtrend.
 
 Cập nhật bản mới: chạy `claude plugin marketplace update hgtrend` rồi `claude plugin update hgtrend@hgtrend`, sau đó mở lại Claude Code hoặc app Claude.
@@ -62,7 +62,7 @@ codex plugin marketplace add hgtrend/hgtrend
 codex plugin add hgtrend@hgtrend
 ```
 
-Rồi chạy lệnh đăng nhập. Trình duyệt tự mở trang của hgtrend.com, bạn đăng nhập và bấm «Cho phép»:
+Rồi chạy lệnh đăng nhập. Trình duyệt tự mở trang của hgstudio.work, bạn đăng nhập và bấm «Cho phép»:
 
 ```
 codex mcp login hgtrend

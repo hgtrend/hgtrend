@@ -51,7 +51,42 @@ Gói cài ở đây cũng hiện sẵn trong app Claude trên cùng máy, nhưng
 Cập nhật bản mới: chạy `claude plugin marketplace update hgtrend` rồi `claude plugin update hgtrend@hgtrend`, sau đó mở lại Claude Code hoặc app Claude.
 Gỡ gói: `claude plugin uninstall hgtrend@hgtrend`.
 
-## Dùng Claude.ai trên web, ChatGPT, Cursor
+## Dùng Codex (OpenAI, dòng lệnh)
+
+Mục này cho người đã cài Codex trên máy. Cài xong, Codex có công cụ và đủ 9 kỹ năng, như khi cài trong app Claude.
+
+Mở Terminal, chạy từng dòng một:
+
+```
+codex plugin marketplace add hgtrend/hgtrend
+codex plugin add hgtrend@hgtrend
+```
+
+Rồi chạy lệnh đăng nhập. Trình duyệt tự mở trang của hgtrend.com, bạn đăng nhập và bấm «Cho phép»:
+
+```
+codex mcp login hgtrend
+```
+
+Cập nhật bản mới: thoát Codex, chạy hai lệnh này trong Terminal rồi mở lại Codex:
+
+```
+codex plugin marketplace upgrade
+codex plugin add hgtrend@hgtrend
+```
+
+Gỡ gói: chạy `codex plugin remove hgtrend@hgtrend`.
+
+## Dùng ChatGPT trên web
+
+Cài lần đầu gồm hai bước:
+
+1. Nối công cụ HG Trend vào ChatGPT theo trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
+2. Cài 9 kỹ năng: tải tệp https://github.com/hgtrend/hgtrend/raw/main/chatgpt.zip về máy, giữ nguyên tệp .zip, đừng giải nén. Mở `https://chatgpt.com/plugins`, bấm **Thêm**, chọn **Tải lên tệp nén plugin**. Trong hộp «Plugin mới», bấm **Chọn tệp**, chọn tệp vừa tải, bấm **Thêm plugin**. Sang trang của plugin, bấm **Cài đặt plugin**.
+
+Có bản mới: tải lại tệp chatgpt.zip ở bước 2. Mở `https://chatgpt.com/plugins`, vào plugin hgtrend, bấm nút ba chấm «Thao tác khác», chọn **Tải phiên bản mới lên**, rồi chọn tệp vừa tải. Không phải gỡ hay cài lại.
+
+## Dùng Claude.ai trên web, Cursor
 
 Các trợ lý này nối thẳng tới địa chỉ `https://hgtrend.com/mcp`, không cài bộ này. Cách nối từng loại ghi ở trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
 

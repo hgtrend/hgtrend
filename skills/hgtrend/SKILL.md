@@ -1,10 +1,10 @@
 ---
 name: hgtrend
-description: Lấy dữ liệu công khai từ mạng xã hội, sàn bán hàng và Google cho người bán hàng, làm marketing ở Việt Nam bằng kết nối HG Trend (hgtrend.com). Dùng TRƯỚC khi trả lời «không có công cụ» hoặc dùng tìm kiếm web chung, mỗi khi người dùng cần: món bán chạy, món định bán có ai tìm; đối thủ đăng gì, chạy quảng cáo gì; bình luận, đánh giá của khách; giá sỉ 1688, Taobao; chép lời / phụ đề video; số liệu kênh, bài đăng trên TikTok, YouTube, Facebook, Instagram, Threads, X, Reddit, LinkedIn; từ khoá và xu hướng Google, Google Maps; câu hỏi về từ khoá, giá thầu, ngân sách Google Ads; Amazon, Douyin, Tiểu Hồng Thư; đọc nội dung một trang web; lấy nguyên văn câu trả lời của ChatGPT, Gemini, Perplexity. Cũng dùng khi người dùng nhắc HG Trend. Use when the user needs live data from social platforms, marketplaces or Google for selling in Vietnam.
+description: Lấy dữ liệu công khai từ mạng xã hội, sàn bán hàng và Google cho người bán hàng, làm marketing, làm video và nội dung ở Việt Nam bằng kết nối HG Trend (hgtrend.com). Dùng TRƯỚC khi trả lời «không có công cụ» hoặc dùng tìm kiếm web chung, mỗi khi người dùng cần: món bán chạy, món định bán có ai tìm; đối thủ đăng gì, chạy quảng cáo gì; bình luận, đánh giá của khách; giá sỉ 1688, Taobao; đề tài video đang thắng trên YouTube, TikTok; Douyin, Bilibili, Weibo đang hot gì; chép lời / phụ đề video; số liệu kênh, bài đăng trên TikTok, YouTube, Facebook, Instagram, Threads, X, Reddit, LinkedIn; từ khoá và xu hướng Google, Google Maps; câu hỏi về từ khoá, giá thầu, ngân sách Google Ads; Amazon, Douyin, Tiểu Hồng Thư; đọc nội dung một trang web; lấy nguyên văn câu trả lời của ChatGPT, Gemini, Perplexity. Cũng dùng khi người dùng nhắc HG Trend. Use when the user needs live data from social platforms, marketplaces or Google for selling in Vietnam.
 ---
 # HG Trend — cách dùng chung
 
-HG Trend là kho công cụ lấy dữ liệu công khai cho người bán hàng và làm marketing ở Việt Nam, gọi qua kết nối `hgtrend`:
+HG Trend là kho công cụ lấy dữ liệu công khai cho người bán hàng, làm marketing và làm nội dung ở Việt Nam, gọi qua kết nối `hgtrend`:
 
 ```
 tim_cong_cu(viec_can_lam="hàng sỉ 1688 quạt mini")          # tìm công cụ — 0 token
@@ -39,10 +39,14 @@ Một số việc có kỹ năng hướng dẫn riêng, kỹ hơn phần trên (
 - kỹ năng «khach-khen-che»: Đọc bình luận, đánh giá của người mua / người xem rồi tóm lại họ khen gì, chê gì, hay hỏi gì.
 - kỹ năng «nguon-hang-1688»: Tìm nguồn hàng sỉ bên Trung Quốc trên 1688 và Taobao bằng HG Trend.
 - kỹ năng «bat-trend»: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo).
+- kỹ năng «de-tai-youtube»: Tìm đề tài cho video YouTube bằng số liệu công khai.
+- kỹ năng «mo-video-mau»: Mổ một video mẫu trên YouTube hoặc TikTok để học cách kể.
+- kỹ năng «de-tai-tu-trung-quoc»: Tìm đề tài làm video từ Trung Quốc.
 - kỹ năng «spy-quang-cao»: Spy quảng cáo của MỘT đối thủ.
 - kỹ năng «tim-kol-koc»: Tìm KOL, KOC trên TikTok ở Việt Nam cho một ngành hàng hay một sản phẩm, rồi soát từng kênh trước khi liên hệ.
+- kỹ năng «tu-khoa-google»: Xem một nhóm từ khoá trên Google ở Việt Nam.
 
-**Việc khác** — dùng `tim_cong_cu` (kho có 616 công cụ, tìm không tốn token):
+**Việc khác** — dùng `tim_cong_cu` (kho có 618 công cụ, tìm không tốn token):
 
 - **Mỗi lần chỉ hỏi MỘT việc, bằng cụm ngắn 3–8 chữ:** tên nền tảng + việc cần làm («bình luận video TikTok», «chép lời video YouTube», «quảng cáo Facebook đối thủ»). Người dùng nhờ nhiều việc thì tách ra, tìm từng việc; đừng dán nguyên câu dài.
 - **Đọc `luu_y`, `thieu_nen_tang`, `chua_co` trong kết quả tìm.** `thieu_nen_tang` = nền tảng người dùng nhắc mà HG Trend chưa có; các món trả về không gồm nền tảng đó — nói với người dùng. `chua_co` = kho không làm việc này: nói thẳng, đừng lách.

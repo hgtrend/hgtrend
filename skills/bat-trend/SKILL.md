@@ -1,6 +1,6 @@
 ---
 name: bat-trend
-description: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo) — bằng hai báo cáo «Báo cáo trend TikTok hôm nay» và «Bản tin trend tuần theo ngành hàng» của HG Trend. Dùng khi người dùng hỏi «TikTok đang có trend gì», «hôm nay có gì hot», «hashtag nào đang lên», «nên làm video kiểu gì», «tuần này ngành … có gì mới», «theo dõi ngành giúp tôi», «mỗi tuần gửi tôi bản tin ngành …», «TikTok ở Thái Lan đang có trend gì». Đã có một món cụ thể thì dùng kỹ năng xem-mon-dinh-ban; muốn tìm món để bán thì dùng tim-hang-hot.
+description: Xem TikTok ở Việt Nam hoặc một nước khác lúc này đang đẩy gì (hashtag đứng đầu bảng 7 ngày, video đang hot) và làm bản tin tuần cho một ngành hàng (từ khoá Google lên / xuống, hashtag của ngành, món bán chạy trên TikTok Shop, mẫu quảng cáo) — bằng hai báo cáo «Báo cáo trend TikTok hôm nay» và «Bản tin trend tuần theo ngành hàng» của HG Trend. Thêm cho người làm video: video ngắn YouTube (Shorts) đang hot, chủ đề người xem TikTok đang tìm mà còn ít video, cụm YouTube gợi ý khi gõ. Dùng khi người bán hàng hoặc người làm nội dung (TikTok, YouTube Shorts, kênh review) hỏi «TikTok đang có trend gì», «hôm nay có gì hot», «hashtag nào đang lên», «nên làm video kiểu gì», «tuần này ngành … có gì mới», «theo dõi ngành giúp tôi», «mỗi tuần gửi tôi bản tin ngành …», «TikTok ở Thái Lan đang có trend gì», «Shorts đang hot gì», «nên làm video ngắn về gì», «người xem TikTok đang tìm gì», «chủ đề nào còn ít người làm». Đã có một món cụ thể thì dùng kỹ năng xem-mon-dinh-ban; muốn tìm món để bán thì dùng tim-hang-hot.
 ---
 # Bắt trend: TikTok lúc này và bản tin tuần của ngành
 
@@ -24,7 +24,11 @@ Dùng kết nối `hgtrend`: `tim_cong_cu` (tìm công cụ, 0 token) · `xem_co
 | Nói rõ muốn cả hai | Hai lượt, cộng token cả hai |
 | Trend ở nước khác | `hgtrendtt` với `quoc_gia`. Bản tin tuần chỉ có Việt Nam |
 | Trend trên Shopee, Lazada, Tiki, Sendo, Zalo | HG Trend chưa có. Nói vậy, hỏi họ có muốn xem TikTok thay không |
-| Trend trên YouTube, Facebook, Instagram, Tiểu Hồng Thư… | Không thuộc hai báo cáo này: `tim_cong_cu` với cụm «đang hot» + tên nền tảng |
+| Video ngắn YouTube (Shorts) đang hot | «Video ngắn YouTube đang hot» (`hggjljce`) — mục «Cho người làm video» ở dưới |
+| «Người xem TikTok đang tìm gì», «chủ đề nào còn ít video» | «Chủ đề khán giả đang tìm trên TikTok» (`hgev4tlz`) — mục «Cho người làm video» |
+| «Trên YouTube người ta hay gõ gì về …» | «Gợi ý từ khoá tìm kiếm trên YouTube» (`hgharr5k`) — mục «Cho người làm video» |
+| Video dài YouTube, đề tài theo ngách | Kỹ năng de-tai-youtube. Đề lấy từ Douyin, Bilibili: kỹ năng de-tai-tu-trung-quoc |
+| Trend trên Facebook, Instagram, Tiểu Hồng Thư… | Không thuộc kỹ năng này: `tim_cong_cu` với cụm «đang hot» + tên nền tảng |
 | Chỉ hỏi «nhạc nào đang hot» | **Không chạy.** Nói HG Trend không có bảng xếp hạng nhạc; báo cáo trend chỉ đếm được trong mẫu vài chục video có bài nào lặp lại không (thường là không). Hỏi họ có muốn chạy báo cáo đó không, kèm giá |
 | Đã có một món cụ thể / muốn tìm món để bán | «Xem món định bán có ai tìm, ai bán chưa» (`hgxemmon`, ~27–115 token) / «Tìm hàng hot: TikTok Shop, Douyin, Google» (`hgtimhot`, ~27–153 token) |
 | «Mỗi tuần gửi tôi bản tin» | HG Trend không tự gửi; mỗi lần xem là một lượt chạy trừ token. Chạy lượt này và nói họ nhắn lại khi muốn bản mới. **Không tự đặt lịch chạy lặp lại**; họ nói rõ muốn đặt lịch thì nêu giá mỗi lượt, số lượt mỗi tháng, tổng token và chờ đồng ý |
@@ -75,6 +79,26 @@ chay_cong_cu(ma="hgbantin", tham_so={"nganh": "làm đẹp", "tu_khoa": "son tin
 - Kết quả chỉ có `loi`, không có `ket_qua`: chưa trừ token. Sai tên tham số hay dạng giá trị thì sửa và gọi lại **đúng lượt đó** một lần; thiếu thông tin của người dùng, hết token, nguồn bận thì dừng và báo.
 - Có `ket_qua` là **đã trừ token**, kể cả khi thiếu phần. Phần nằm trong `phan_tam_thieu`: nói «lần này không lấy được». Danh sách rỗng mà không nằm trong `phan_tam_thieu`: nói «không thấy trong phần đã lấy». Không nói thành «không có».
 - Mọi lượt chạy thêm sau khi đã có kết quả (chạy lại, đổi từ khoá, đổi công cụ, thêm phần tuỳ chọn): nêu giá và **chờ đồng ý**.
+
+## Cho người làm video
+
+Ba công cụ rẻ (ở lượt thử: Shorts hot 10 token, chủ đề TikTok 5 token, cụm YouTube gợi ý 5 token):
+
+```
+chay_cong_cu(ma="hggjljce", tham_so={}, cat_ky_tu=30000)
+chay_cong_cu(ma="hgev4tlz", tham_so={"tab": "content_gap", "language_filters": "vi"}, cat_ky_tu=30000)
+chay_cong_cu(ma="hgharr5k", tham_so={"keyword": "<cụm>", "language": "vi", "region": "VN"})
+```
+
+| Công cụ | Đọc gì | Lưu ý |
+|---|---|---|
+| Shorts hot (`hggjljce`) | `shorts`: `title`, `viewCountInt`, `likeCountInt`, `commentCountInt`, `publishDateText`, `durationFormatted`, `channel`, `url` | Khoảng 20 video, **không chọn được nước**: ở lượt thử toàn kênh nói tiếng Anh, nhiều video đăng từ vài tháng trước. Nói «Shorts YouTube đang được đẩy (không riêng Việt Nam)», không viết «Shorts hot ở Việt Nam». Lượt xem cộng dồn từ ngày đăng |
+| Chủ đề TikTok người xem đang tìm (`hgev4tlz`) | `inspiration_list`: `query_text` (cụm chủ đề), `popularity` (điểm 0–100 TikTok tự chấm), `video_num` (số video đã có cho chủ đề) | Là gợi ý TikTok dành cho người làm nội dung. `tab` = «content_gap»: chủ đề **TikTok chấm điểm quan tâm cao mà còn ít video**; `popularity` là điểm TikTok tự chấm, **không phải lượt tìm** — đừng gọi là «bao nhiêu người tìm»; «all»: mọi gợi ý. Lọc tiếng Việt vẫn **lẫn cụm tiếng Anh, chủ đề của nước khác** — chỉ nêu cụm hợp với người xem của họ, nói đã bỏ bao nhiêu. Bỏ qua `rec_reason` (lời nhắn cho tài khoản lấy dữ liệu, không phải cho người dùng). Không phải bảng xếp hạng; không biết điểm tính trong bao lâu |
+| Cụm YouTube gợi ý (`hgharr5k`) | `suggestions` | Cụm YouTube tự hiện khi gõ (ở lượt thử: 14 cụm), **không kèm số lượt tìm**, không xếp theo độ phổ biến |
+
+Kết quả hay bị cắt (`rut_gon`; ở lượt thử: chủ đề TikTok 9/20 mục, Shorts hot 20/48): nói mới xem được chừng ấy. Trong kết quả có `credits_charged`, `credits_remaining`: số của nguồn, **không phải token của người dùng** — đừng nhắc tới.
+
+Trả lời theo bố cục của báo cáo trend TikTok ở dưới (câu mở · danh sách · điểm chung đếm được · một ý tưởng nên thử · dòng lưu ý · việc nên làm tiếp), thay phần hashtag bằng danh sách của công cụ đã chạy.
 
 ## Đọc kết quả
 

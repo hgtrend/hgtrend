@@ -1,9 +1,9 @@
 # HG Trend — để trợ lý AI lấy số liệu bán hàng giúp bạn
 
 Bạn nhắn việc cho trợ lý AI như bình thường. Trợ lý dùng HG Trend để lấy dữ liệu công khai đang có trên mạng rồi trả lời bằng tiếng Việt: món bạn định bán
-có ai tìm, ai đang bán, giá bao nhiêu; đối thủ đang đăng gì, chạy quảng cáo gì; khách khen chê gì; giá sỉ bên Trung Quốc.
+có ai tìm, ai đang bán, giá bao nhiêu; đối thủ đang đăng gì, chạy quảng cáo gì; khách khen chê gì; giá sỉ bên Trung Quốc; đề tài video đang thắng trên YouTube và bên Trung Quốc.
 
-Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 9 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
+Bộ cài này chỉ gồm chữ, không cài phần mềm nào chạy trên máy bạn. Trong đó có địa chỉ kết nối tới `hgtrend.com` và 13 kỹ năng. Kỹ năng là tệp hướng dẫn bằng
 tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá, và không nói quá con số lấy được.
 
 ## Hỏi được gì
@@ -18,6 +18,10 @@ tiếng Việt, dặn trợ lý dùng công cụ nào cho việc nào, nói giá
 | «Tìm KOC review [sản phẩm]» hoặc «Kênh @… có đáng book không?» | Tìm KOL, KOC | khoảng 10 token để tìm, mỗi kênh soát khoảng 20 token |
 | «Khách nói gì dưới video này? [link]» | Khách khen chê | khoảng 2–30 token |
 | «Tìm nguồn sỉ quạt cầm tay trên 1688» | Nguồn hàng 1688 | khoảng 77 token. Xem chi tiết một mẫu 1688: thêm khoảng 77 token. Tìm cả trên Taobao, Tmall: thêm khoảng 120 token |
+| «Mình làm kênh YouTube kể chuyện lịch sử, đề tài nào đang nổ?» hoặc «Kênh @… video nào nổ nhất?» | Đề tài YouTube | khoảng 120 token cho lượt đầu |
+| «Mổ giúp video này: mở đầu thế nào, người xem nói gì? [link]» | Mổ video mẫu | khoảng 30 token |
+| «Douyin, Bilibili đang hot gì?» hoặc «Truyện Trung Quốc nào đang được làm video nhiều?» | Đề tài từ Trung Quốc | khoảng 15 token cho các bảng hot, tìm truyện khoảng 150 token |
+| «So mức quan tâm trên Google của mấy từ khoá này, người ta hay gõ kèm gì?» | Từ khoá Google | khoảng 80 token |
 | Việc lẻ khác, ví dụ chép lời một video TikTok hoặc YouTube | Kỹ năng chung «hgtrend» tìm trong hơn 600 công cụ | giá ước tính từng công cụ ghi ở trang chủ hgtrend.com |
 
 Một lần hỏi có thể chạy hơn một công cụ, nên số token thật có thể cao hơn dòng ghi ở bảng; xem điều 3 và 4 ở mục «6 điều phải biết» bên dưới.
@@ -53,7 +57,7 @@ Gỡ gói: `claude plugin uninstall hgtrend@hgtrend`.
 
 ## Dùng Codex (OpenAI, dòng lệnh)
 
-Mục này cho người đã cài Codex trên máy. Cài xong, Codex có công cụ và đủ 9 kỹ năng, như khi cài trong app Claude.
+Mục này cho người đã cài Codex trên máy. Cài xong, Codex có công cụ và đủ 13 kỹ năng, như khi cài trong app Claude.
 
 Mở Terminal, chạy từng dòng một:
 
@@ -82,7 +86,7 @@ Gỡ gói: chạy `codex plugin remove hgtrend@hgtrend`.
 Cài lần đầu gồm hai bước:
 
 1. Nối công cụ HG Trend vào ChatGPT theo trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
-2. Cài 9 kỹ năng: tải tệp https://github.com/hgtrend/hgtrend/raw/main/chatgpt.zip về máy, giữ nguyên tệp .zip, đừng giải nén. Mở `https://chatgpt.com/plugins`, bấm **Thêm**, chọn **Tải lên tệp nén plugin**. Trong hộp «Plugin mới», bấm **Chọn tệp**, chọn tệp vừa tải, bấm **Thêm plugin**. Sang trang của plugin, bấm **Cài đặt plugin**.
+2. Cài 13 kỹ năng: tải tệp https://github.com/hgtrend/hgtrend/raw/main/chatgpt.zip về máy, giữ nguyên tệp .zip, đừng giải nén. Mở `https://chatgpt.com/plugins`, bấm **Thêm**, chọn **Tải lên tệp nén plugin**. Trong hộp «Plugin mới», bấm **Chọn tệp**, chọn tệp vừa tải, bấm **Thêm plugin**. Sang trang của plugin, bấm **Cài đặt plugin**.
 
 Có bản mới: tải lại tệp chatgpt.zip ở bước 2. Mở `https://chatgpt.com/plugins`, vào plugin hgtrend, bấm nút ba chấm «Thao tác khác», chọn **Tải phiên bản mới lên**, rồi chọn tệp vừa tải. Không phải gỡ hay cài lại.
 
@@ -90,7 +94,7 @@ Có bản mới: tải lại tệp chatgpt.zip ở bước 2. Mở `https://chat
 
 Các trợ lý này nối thẳng tới địa chỉ `https://hgtrend.com/mcp`, không cài bộ này. Cách nối từng loại ghi ở trang «Cách dùng»: `https://hgtrend.com/cach-dung`.
 
-**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 9 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
+**Phải biết trước khi dùng cách này:** trợ lý có công cụ nhưng KHÔNG có 13 kỹ năng, nên không có lời dặn nào ghi trong trang này: không hỏi trước khi vượt 200 token,
 không nói giá ở dòng đầu, không được dặn nói «chưa có», không được dặn nêu số món đã tính. Trợ lý tự chọn công cụ, số token tiêu có thể khác bảng ở trên.
 
 ## 6 điều phải biết trước khi mua token

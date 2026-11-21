@@ -1,6 +1,6 @@
 ---
 name: soi-doi-thu
-description: Xem một đối thủ (thương hiệu, shop, kênh) đang đăng gì trên TikTok, YouTube, Facebook, Instagram và đang chạy quảng cáo gì trên Facebook, Google — bằng báo cáo «Soi kênh, bài đăng, quảng cáo đối thủ» của HG Trend; hoặc xem các mẫu quảng cáo đang chạy của cả một ngành hàng. Dùng khi người dùng hỏi «đối thủ đang làm gì», «kênh này đăng gì, bao lâu một bài», «họ đang chạy quảng cáo gì», «spy ads», «ngành này đang chạy mẫu quảng cáo nào», kể cả khi họ hỏi doanh thu hay số đơn của đối thủ (HG Trend chưa có — kỹ năng nói rõ cách trả lời).
+description: Xem một đối thủ (thương hiệu, shop, kênh) đang đăng gì trên TikTok, YouTube, Facebook, Instagram và đang chạy quảng cáo gì trên Facebook, Google — bằng báo cáo «Soi kênh, bài đăng, quảng cáo đối thủ» của HG Trend; hoặc xem các mẫu quảng cáo đang chạy của cả một ngành hàng. Dùng khi người dùng (chủ shop, agency, người làm nội dung soi kênh cùng ngách) hỏi «đối thủ đang làm gì», «kênh này đăng gì, bao lâu một bài», «họ đang chạy quảng cáo gì», «spy ads», «ngành này đang chạy mẫu quảng cáo nào», kể cả khi họ hỏi doanh thu hay số đơn của đối thủ (HG Trend chưa có — kỹ năng nói rõ cách trả lời).
 ---
 # Soi đối thủ: kênh, bài đăng, quảng cáo
 

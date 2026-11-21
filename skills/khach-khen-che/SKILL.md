@@ -1,6 +1,6 @@
 ---
 name: khach-khen-che
-description: Đọc bình luận, đánh giá của người mua / người xem rồi tóm lại họ khen gì, chê gì, hay hỏi gì — bằng báo cáo «Tóm tắt bình luận: khách khen, chê gì» của HG Trend. Nhận link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, hoặc tên một cửa hàng trên Google Maps. Dùng khi người dùng hỏi «khách nói gì về…», «khen chê gì», «đọc bình luận / đánh giá / review / feedback này», «khách hay hỏi gì».
+description: Đọc bình luận, đánh giá của người mua / người xem rồi tóm lại họ khen gì, chê gì, hay hỏi gì — bằng báo cáo «Tóm tắt bình luận: khách khen, chê gì» của HG Trend. Nhận link video TikTok, video YouTube, bài Facebook, sản phẩm TikTok Shop, hoặc tên một cửa hàng trên Google Maps. Dùng khi người dùng (chủ shop, agency làm báo cáo cho nhãn hàng, người làm video muốn biết người xem nghĩ gì) hỏi «khách nói gì về…», «khen chê gì», «đọc bình luận / đánh giá / review / feedback này», «khách hay hỏi gì».
 ---
 # Khách khen gì, chê gì
 
